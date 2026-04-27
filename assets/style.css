@@ -559,7 +559,7 @@ body {
 }
 
 /* =============================================
-   14. Accessibility — Focus Styles
+   15. Accessibility — Focus Styles
    ============================================= */
 #drawingCanvas:focus {
     outline: 3px solid var(--accent-text);
@@ -574,4 +574,194 @@ select:focus-visible {
     outline: 3px solid var(--accent-text);
     outline-offset: 3px;
     border-radius: 3px;
+}
+
+/* =============================================
+   16. Responsive Media Queries
+   ============================================= */
+
+/* ---- Tablet: 768px–991px ----
+   7 nav items are too wide at the default size;
+   shrink font and padding so they all fit in one row. */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .navbar-brand {
+        font-size: 1.1rem;
+        letter-spacing: 2px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.74rem !important;
+        padding: 0.25rem 0.38rem !important;
+        letter-spacing: 0 !important;
+    }
+
+    /* Wireframe 3-col grid → 2 cols on tablet */
+    .wf-grid-3 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Hero padding reduced slightly on tablet */
+    #hero {
+        padding: 90px 0 75px;
+    }
+}
+
+/* ---- Mobile landscape / small tablet: 576px–767px ---- */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    #hero {
+        padding: 80px 0 65px;
+    }
+
+    .page-header {
+        padding: 58px 0 48px;
+    }
+
+    .section-pad {
+        padding: 60px 0;
+    }
+
+    #contact {
+        padding: 60px 0 35px;
+    }
+
+    .wf-section {
+        padding: 45px 0;
+    }
+}
+
+/* ---- Small mobile: < 576px ---- */
+@media (max-width: 575.98px) {
+    /* Hero */
+    #hero {
+        padding: 68px 0 55px;
+    }
+
+    #hero h1 {
+        font-size: 2.1rem;
+        letter-spacing: -0.5px;
+    }
+
+    #hero h2 {
+        font-size: 1.35rem;
+    }
+
+    #hero .lead {
+        font-size: 0.95rem;
+    }
+
+    /* Reduce gap between hero buttons so they wrap neatly */
+    #hero .d-flex.gap-3 {
+        gap: 0.6rem !important;
+    }
+
+    /* Page header (gallery, draw, community, bookmarks, wireframe) */
+    .page-header {
+        padding: 48px 0 38px;
+    }
+
+    .page-header h1 {
+        font-size: 1.9rem;
+    }
+
+    .page-header .lead {
+        font-size: 0.9rem;
+    }
+
+    /* Section padding */
+    .section-pad {
+        padding: 48px 0;
+    }
+
+    /* Contact/footer band */
+    #contact {
+        padding: 48px 0 28px;
+    }
+
+    /* About image: reduce shadow offset to prevent x-axis overflow */
+    .about-img {
+        box-shadow: 5px 5px 0px var(--accent-color);
+    }
+
+    /* Section headings */
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    /* Wireframe section padding */
+    .wf-section {
+        padding: 38px 0;
+    }
+
+    /* Wireframe diagrams: enable horizontal scroll rather than clipping */
+    .wf-diagram {
+        overflow-x: auto;
+        overflow-y: hidden;
+        font-size: 0.72rem;
+    }
+
+    /* Tighten wireframe internal blocks on small screens */
+    .wf-block {
+        margin: 6px;
+        padding: 7px 10px;
+    }
+
+    /* Smaller canvas placeholder height in wireframe */
+    .wf-canvas {
+        min-height: 60px;
+    }
+}
+
+/* ---- All mobile: < 768px ---- */
+@media (max-width: 767.98px) {
+    /* Wireframe grids collapse to single column */
+    .wf-grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .wf-grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .wf-grid-15 {
+        grid-template-columns: 1fr;
+    }
+
+    /* Hide the fake nav link row in wireframe diagrams —
+       too cramped to be readable at mobile widths */
+    .wf-nav-links {
+        display: none;
+    }
+
+    /* Footer link row: add vertical breathing room between wrapping links */
+    .footer-link {
+        margin-bottom: 0.2rem;
+        display: inline-block;
+    }
+}
+
+/* ---- Touch devices: disable transform-based hover effects ----
+   hover: hover matches only devices with a true hover pointer
+   (desktops/laptops). Touch phones/tablets won't match, so
+   the card-lift and button-rise transforms won't fire on tap. */
+@media (hover: none) {
+    .card:hover {
+        transform: none;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+    }
+
+    .bookmark-card:hover {
+        transform: none;
+        box-shadow: none;
+        border-color: #e2e6ea;
+    }
+
+    .btn-primary:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    .btn-accent:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
 }
