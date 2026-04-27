@@ -12,12 +12,14 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-md sticky-top" id="mainNav">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav class="navbar navbar-expand-md sticky-top" id="mainNav" aria-label="Main navigation">
         <div class="container">
-            <a class="navbar-brand" href="index.html">parman</a>
+            <a class="navbar-brand" href="index.html" aria-label="John E. Parman — Home">parman</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false"
-                aria-label="Toggle navigation">
+                aria-label="Toggle navigation menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarMain">
@@ -54,9 +56,9 @@
         </div>
     </header>
 
-    <main class="section-pad">
+    <main id="main-content" class="section-pad">
         <div class="container">
-            <div id="galleryContainer" class="row g-4"></div>
+            <div id="galleryContainer" class="row g-4" aria-live="polite" aria-label="Community drawings"></div>
             <div class="text-center mt-5">
                 <a href="contact.html" class="btn btn-primary btn-lg">Add Your Drawing</a>
             </div>
@@ -67,21 +69,22 @@
         <div class="container">
             <hr class="border-secondary">
             <div class="row py-3">
-                <div class="col-12 col-md-6 text-center text-md-start text-white-50 small mb-2 mb-md-0">
+                <div class="col-12 col-md-6 text-center text-md-start small mb-2 mb-md-0" style="color:var(--footer-link);">
                     &copy; 2025 John E. Parman. All rights reserved.
                 </div>
-                <div class="col-12 col-md-6 text-center text-md-end">
+                <nav class="col-12 col-md-6 text-center text-md-end" aria-label="Footer navigation">
                     <a href="index.html" class="footer-link me-3">Home</a>
                     <a href="gallery.html" class="footer-link me-3">Gallery</a>
                     <a href="contact.html" class="footer-link me-3">Draw</a>
-                    <a href="drawback.html" class="footer-link">Community</a>
-                </div>
+                    <a href="drawback.html" class="footer-link me-3">Community</a>
+                    <a href="wireframe.html" class="footer-link">Wireframe</a>
+                </nav>
             </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmiFaVdMuNqzXMxBbqp3rVwCuLgzJTb" crossorigin="anonymous"></script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
         const container = document.getElementById('galleryContainer');
         const gallery = JSON.parse(localStorage.getItem('myGallery') || '[]');
@@ -98,7 +101,8 @@
                 col.className = 'col-12 col-sm-6 col-lg-4';
                 col.innerHTML = `
                     <div class="card shadow-sm">
-                        <img src="${imageStr}" class="card-img-top community-img" alt="Community drawing ${index + 1}">
+                        <img src="${imageStr}" class="card-img-top community-img"
+                            alt="Community drawing number ${index + 1}, submitted by a visitor">
                         <div class="card-body text-center">
                             <p class="text-muted small mb-0">Submission #${index + 1}</p>
                         </div>
