@@ -12,12 +12,14 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-md sticky-top" id="mainNav">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav class="navbar navbar-expand-md sticky-top" id="mainNav" aria-label="Main navigation">
         <div class="container">
-            <a class="navbar-brand" href="index.html">parman</a>
+            <a class="navbar-brand" href="index.html" aria-label="John E. Parman — Home">parman</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false"
-                aria-label="Toggle navigation">
+                aria-label="Toggle navigation menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarMain">
@@ -65,18 +67,18 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
 
-        <section id="about" class="section-pad">
+        <section id="about" class="section-pad" aria-labelledby="about-heading">
             <div class="container">
                 <div class="row align-items-center g-5">
                     <div class="col-12 text-center mb-2">
-                        <h2 class="section-title">About My Practice</h2>
-                        <div class="section-divider"></div>
+                        <h2 class="section-title" id="about-heading">About My Practice</h2>
+                        <div class="section-divider" aria-hidden="true"></div>
                     </div>
                     <div class="col-12 col-md-5">
                         <img src="assets/images/IMG-20241004-WA0000.webp" class="img-fluid rounded about-img"
-                            alt="John E. Parman in a leather jacket">
+                            alt="John E. Parman standing in a leather jacket, looking directly at the camera">
                     </div>
                     <div class="col-12 col-md-7">
                         <p>
@@ -108,17 +110,17 @@
             </div>
         </section>
 
-        <section id="portfolio" class="section-pad bg-section">
+        <section id="portfolio" class="section-pad bg-section" aria-labelledby="portfolio-heading">
             <div class="container">
                 <div class="col-12 text-center mb-5">
-                    <h2 class="section-title">Portfolio</h2>
-                    <div class="section-divider"></div>
+                    <h2 class="section-title" id="portfolio-heading">Portfolio</h2>
+                    <div class="section-divider" aria-hidden="true"></div>
                 </div>
                 <div class="row g-4">
                     <div class="col-12 col-md-4">
                         <div class="card h-100">
                             <img src="assets/images/IMG_20210116_131216.webp" class="card-img-top"
-                                alt="Artistic photography">
+                                alt="Outdoor photograph taken in January 2021, part of the artistic photography collection">
                             <div class="card-body d-flex flex-column">
                                 <h3 class="card-title">Gallery</h3>
                                 <p class="card-text flex-grow-1">See a collection of my artistic works across various mediums — photography, design, and more.</p>
@@ -129,19 +131,20 @@
                     <div class="col-12 col-md-4">
                         <div class="card h-100">
                             <img src="assets/images/floatjetwebp.webp" class="card-img-top"
-                                alt="FloatJet interface showing a feedback form">
+                                alt="Screenshot of the Floatjet app interface showing a feedback form with colour-coded rating buttons">
                             <div class="card-body d-flex flex-column">
                                 <h3 class="card-title">Floatjet</h3>
                                 <p class="card-text flex-grow-1">Floatjet is a creative app library designed to encourage and motivate clear feedback about services from users.</p>
                                 <a href="https://qualitylemons.github.io/floop-board-dev"
-                                    class="btn btn-outline-primary mt-auto" target="_blank" rel="noopener">Visit Site</a>
+                                    class="btn btn-outline-primary mt-auto" target="_blank" rel="noopener"
+                                    aria-label="Visit the Floatjet site (opens in a new tab)">Visit Site</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-4">
                         <div class="card h-100">
                             <img src="assets/images/Benny.webp" class="card-img-top"
-                                alt="Friend Benny Shakes">
+                                alt="Portrait of Benny Shakes, a friend and collaborator, used to represent the Art Me interactive drawing project">
                             <div class="card-body d-flex flex-column">
                                 <h3 class="card-title">Art Me</h3>
                                 <p class="card-text flex-grow-1">Manifest contact through the power of art — draw a message and share it with the community gallery.</p>
@@ -159,18 +162,19 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 text-center mb-5">
-                    <h2 class="section-title text-white">Contact</h2>
-                    <div class="section-divider bg-accent"></div>
+                    <h2 class="section-title text-white" id="contact-heading">Contact</h2>
+                    <div class="section-divider bg-accent" aria-hidden="true"></div>
                     <p class="text-white-75 mt-3">
                         Got questions or ideas? I'd love to hear from you. Whether you're interested in collaboration
                         or have inquiries about my projects, please don't hesitate to get in touch.
                     </p>
                 </div>
                 <div class="col-12 col-lg-8">
-                    <form class="row g-3">
+                    <form class="row g-3" aria-labelledby="contact-heading" novalidate>
                         <div class="col-md-4">
                             <label for="full-name" class="form-label text-white">Full Name</label>
-                            <input type="text" class="form-control" id="full-name" placeholder="Your name">
+                            <input type="text" class="form-control" id="full-name"
+                                placeholder="Your name" required aria-required="true">
                         </div>
                         <div class="col-md-4">
                             <label for="phonenumber" class="form-label text-white">Phone Number</label>
@@ -178,12 +182,13 @@
                         </div>
                         <div class="col-md-4">
                             <label for="email" class="form-label text-white">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                            <input type="email" class="form-control" id="email"
+                                placeholder="you@example.com" required aria-required="true">
                         </div>
                         <div class="col-12">
                             <label for="message" class="form-label text-white">Message</label>
                             <textarea class="form-control" id="message" rows="4"
-                                placeholder="Your message here..."></textarea>
+                                placeholder="Your message here..." required aria-required="true"></textarea>
                         </div>
                         <div class="col-12 text-center">
                             <button type="submit" class="btn btn-accent btn-lg">Send Message</button>
@@ -194,15 +199,16 @@
 
             <hr class="border-secondary mt-5">
             <div class="row py-3">
-                <div class="col-12 col-md-6 text-center text-md-start text-white-50 small mb-2 mb-md-0">
+                <div class="col-12 col-md-6 text-center text-md-start small mb-2 mb-md-0" style="color:var(--footer-link);">
                     &copy; 2025 John E. Parman. All rights reserved.
                 </div>
-                <div class="col-12 col-md-6 text-center text-md-end">
+                <nav class="col-12 col-md-6 text-center text-md-end" aria-label="Footer navigation">
                     <a href="index.html" class="footer-link me-3">Home</a>
                     <a href="gallery.html" class="footer-link me-3">Gallery</a>
                     <a href="contact.html" class="footer-link me-3">Draw</a>
-                    <a href="drawback.html" class="footer-link">Community</a>
-                </div>
+                    <a href="drawback.html" class="footer-link me-3">Community</a>
+                    <a href="wireframe.html" class="footer-link">Wireframe</a>
+                </nav>
             </div>
         </div>
     </footer>
