@@ -1,163 +1,312 @@
-/* 1. Global Styles & Variables */
+/* =============================================
+   1. Global Styles & CSS Variables
+   ============================================= */
 :root {
-    --primary-color: #2c3e50;    /* Sophisticated Dark Blue */
-    --accent-color: #e67e22;     /* Creative Orange */
+    --primary-color: #2c3e50;
+    --accent-color: #e67e22;
     --bg-light: #f8f9fa;
+    --bg-section: #f1f3f5;
     --text-main: #333333;
+    --text-muted: #6c757d;
+    --nav-height: 68px;
+    --transition: 0.3s ease;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--nav-height);
 }
 
 body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     color: var(--text-main);
-    line-height: 1.6;
-    scroll-behavior: smooth;
+    line-height: 1.7;
+    background-color: #ffffff;
 }
 
-/* 2. Navigation */
-.navbar {
-    border-bottom: 1px solid #ddd;
-    padding: 1rem 0;
+/* =============================================
+   2. Navigation
+   ============================================= */
+#mainNav {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e9ecef;
+    padding: 0.75rem 0;
+    z-index: 1030;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .navbar-brand {
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--primary-color) !important;
 }
 
-/* 3. Hero Section */
+.navbar-nav .nav-link {
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--text-muted) !important;
+    padding: 0.4rem 0.8rem !important;
+    border-radius: 4px;
+    transition: color var(--transition), background-color var(--transition);
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary-color) !important;
+    background-color: var(--bg-light);
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--accent-color) !important;
+    font-weight: 700;
+}
+
+/* =============================================
+   3. Hero Section (Home page)
+   ============================================= */
 #hero {
-    padding: 100px 0;
-    background: linear-gradient(135deg, #ffffff 0%, #f1f1f1 100%);
+    padding: 110px 0 90px;
+    background: linear-gradient(150deg, #ffffff 0%, #f4f5f7 100%);
+    border-bottom: 1px solid #e9ecef;
 }
 
 #hero h1 {
-    font-weight: 800;
     color: var(--primary-color);
+    letter-spacing: -1px;
 }
 
 #hero h2 {
     color: var(--accent-color);
     font-style: italic;
+    font-weight: 400;
 }
 
-/* 4. Portfolio Cards */
+/* =============================================
+   4. Page Header (inner pages)
+   ============================================= */
+.page-header {
+    background: linear-gradient(150deg, var(--primary-color) 0%, #3d5166 100%);
+    padding: 70px 0 60px;
+    color: #ffffff;
+}
+
+.page-header h1 {
+    color: #ffffff;
+}
+
+.page-header .lead {
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* =============================================
+   5. Section Utilities
+   ============================================= */
+.section-pad {
+    padding: 80px 0;
+}
+
+.bg-section {
+    background-color: var(--bg-section);
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.section-divider {
+    width: 50px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+    margin: 0.75rem auto 2.5rem;
+}
+
+/* =============================================
+   6. Portfolio Cards
+   ============================================= */
 .card {
     border: none;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%; 
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+    transition: transform var(--transition), box-shadow var(--transition);
+    overflow: hidden;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
 .card-img-top {
-    height: 200px;
-    object-fit: cover; 
+    height: 220px;
+    object-fit: cover;
 }
 
 .card-title {
     color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* =============================================
+   7. Buttons
+   ============================================= */
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    padding: 0.6rem 1.6rem;
+    font-weight: 600;
+    transition: background-color var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+    transform: translateY(-1px);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
     font-weight: 600;
 }
 
-/* 5. Custom Buttons */
-.custom-button, .btn-primary {
+.btn-outline-primary:hover {
     background-color: var(--primary-color) !important;
-    border-color: var(--primary-color) !important;
-    padding: 10px 25px;
-    transition: background-color 0.3s ease;
+    color: #ffffff !important;
 }
 
-.custom-button:hover, .btn-primary:hover {
-    background-color: var(--accent-color) !important;
-    border-color: var(--accent-color) !important;
-}
-
-.sharp-corners {
-    border-radius: 0 !important;
-}
-
-/* 6. About Section */
-#about img {
-    border-radius: 8px;
-    box-shadow: 10px 10px 0px var(--accent-color); 
-}
-
-/* 7. Contact & Footer */
-#contact {
-    background-color: var(--bg-light);
-    padding: 60px 0;
-    margin-top: 50px;
-}
-
-.form-control:focus 
-{
+.btn-accent {
+    background-color: var(--accent-color);
     border-color: var(--accent-color);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    font-weight: 700;
+    padding: 0.7rem 2rem;
+    border-radius: 6px;
+    transition: background-color var(--transition), transform var(--transition);
 }
 
-/* --- Drawing Tool Styles --- */
+.btn-accent:hover {
+    background-color: #d35400;
+    border-color: #d35400;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
 
+/* =============================================
+   8. About Section
+   ============================================= */
+.about-img {
+    border-radius: 10px;
+    box-shadow: 10px 10px 0px var(--accent-color);
+    width: 100%;
+}
+
+/* =============================================
+   9. Footer (Contact + Site Footer)
+   ============================================= */
+#contact {
+    background-color: var(--primary-color);
+    padding: 80px 0 40px;
+    margin-top: 0;
+}
+
+.text-white-75 {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.bg-accent {
+    background-color: var(--accent-color) !important;
+}
+
+.site-footer {
+    background-color: var(--primary-color);
+    padding: 0 0 0.5rem;
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: color var(--transition);
+}
+
+.footer-link:hover {
+    color: var(--accent-color);
+}
+
+/* =============================================
+   10. Drawing Tool (contact.html)
+   ============================================= */
 #drawingCanvas {
+    display: block;
+    width: 100%;
+    height: auto;
     background-color: #ffffff;
     border: 3px solid var(--primary-color);
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: crosshair;
-    display: block;
-    margin: 0 auto;
-    touch-action: none; /* Critical for mobile/tablet drawing */
-    max-width: 100%;    /* Ensures responsiveness on phones */
-    height: auto;
+    touch-action: none;
+}
+
+.draw-toolbar {
+    background-color: var(--bg-section);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    border: 1px solid #dee2e6;
 }
 
 .color-btn {
-    width: 80px;
-    height: 40px;
-    border: 2px solid #ddd;
-    font-weight: bold;
-    transition: var(--transition);
-    border-radius: 4px;
+    width: 85px;
+    height: 38px;
+    border: 2px solid transparent;
+    font-weight: 700;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    transition: transform var(--transition), border-color var(--transition);
 }
 
 .color-btn:hover {
-    transform: scale(1.1);
-    border-color: #333;
+    transform: scale(1.08);
+    border-color: var(--primary-color) !important;
 }
 
-/* Specific button overrides for high contrast */
-.color-btn[style*="#000000"], 
-.color-btn[style*="#009E73"] {
-    color: white !important;
+/* =============================================
+   11. Community Gallery (drawback.html)
+   ============================================= */
+.community-img {
+    height: auto;
+    border-bottom: 1px solid #f1f1f1;
+    image-rendering: pixelated;
 }
-
-/* --- Gallery Styles --- */
 
 #galleryContainer .card {
-    border: 1px solid #eee;
-    background-color: #fff;
-    padding: 10px;
+    border: 1px solid #e9ecef;
 }
 
-#galleryContainer .card-img-top {
-    border: 1px solid #f1f1f1;
-    background-color: #fff;
-    height: auto; /* Allow the drawing aspect ratio to show */
-    image-rendering: pixelated; /* Keeps lines sharp if scaled */
-}
-
-/* --- Accessibility Focus --- */
-
-/* Ensures the drawing area is clearly defined for users with low vision */
+/* =============================================
+   12. Accessibility
+   ============================================= */
 #drawingCanvas:focus {
     outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
 }
 
-/* Spacing utility for the drawing toolbar */
-.gap-2 {
-    gap: 0.5rem !important;
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
 }
