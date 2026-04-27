@@ -577,7 +577,47 @@ select:focus-visible {
 }
 
 /* =============================================
-   16. Responsive Media Queries
+   16. Back-to-Top Button
+   ============================================= */
+#backToTop {
+    position: fixed;
+    bottom: 1.8rem;
+    right: 1.8rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 44px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
+    z-index: 1050;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+}
+
+#backToTop.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#backToTop:hover {
+    background: var(--accent-text);
+}
+
+#backToTop:focus-visible {
+    outline: 3px solid var(--accent-text);
+    outline-offset: 3px;
+}
+
+/* =============================================
+   17. Responsive Media Queries
    ============================================= */
 
 /* ---- Tablet: 768px–991px ----
