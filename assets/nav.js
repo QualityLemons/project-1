@@ -1,4 +1,11 @@
-/* nav.js — shared navigation enhancements */
+/* nav.js — shared navigation enhancements
+ *
+ * Bootstrap Collapse API — bootstrap.Collapse.getOrCreateInstance()
+ * Used to programmatically close the mobile navbar collapse on link tap.
+ * Source: Bootstrap 5.3.3 JavaScript API
+ * https://getbootstrap.com/docs/5.3/components/collapse/#via-javascript
+ * License: MIT https://github.com/twbs/bootstrap/blob/main/LICENSE
+ */
 
 (function () {
     'use strict';
