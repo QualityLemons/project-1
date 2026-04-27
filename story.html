@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Story — John E. Parman</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        .story-body {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: var(--text-main);
+        }
+
+        .story-body p {
+            margin-bottom: 1.4rem;
+        }
+
+        .story-pull {
+            border-left: 4px solid var(--accent-text);
+            padding: 0.8rem 1.4rem;
+            background: #fffbeb;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: #444;
+            margin: 2rem 0;
+            font-size: 1.05rem;
+        }
+
+        .story-section-label {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .story-heading {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .issue-card {
+            border: 1px solid #e2e6ea;
+            border-radius: 8px;
+            padding: 1rem 1.2rem;
+            margin-bottom: 1rem;
+            background: #fff;
+        }
+
+        .issue-card .issue-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            color: #c0392b;
+            margin-bottom: 0.25rem;
+        }
+
+        .fix-card {
+            border: 1px solid #d4edda;
+            border-radius: 8px;
+            padding: 1rem 1.2rem;
+            margin-bottom: 1rem;
+            background: #f8fff9;
+        }
+
+        .fix-card .fix-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            color: #276749;
+            margin-bottom: 0.25rem;
+        }
+
+        .persona-card {
+            background: var(--primary-color);
+            color: #fff;
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+        }
+
+        .persona-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .persona-card .persona-role {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .persona-card ul {
+            padding-left: 1.2rem;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.88);
+            font-size: 0.92rem;
+        }
+
+        .persona-card li {
+            margin-bottom: 0.35rem;
+        }
+
+        .story-outcome {
+            background: var(--bg-section);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        @media (max-width: 575.98px) {
+            .story-body {
+                font-size: 1rem;
+            }
+
+            .story-pull {
+                font-size: 0.97rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav class="navbar navbar-expand-lg sticky-top" id="mainNav" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" aria-label="John E. Parman — Home">parman</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false"
+                aria-label="Toggle navigation menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav ms-auto gap-1">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Draw</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bookmarks.html">Bookmarks</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+        <header class="page-header text-center">
+            <div class="container">
+                <h1 class="fw-bold text-white">A User Story</h1>
+                <p class="lead text-white-75">How a frustrated lecturer's experience shaped a safer, more accessible site</p>
+            </div>
+        </header>
+
+        <section class="section-pad">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-8">
+
+                        <span class="story-section-label">The Persona</span>
+                        <h2 class="story-heading">Meet Dr. Asha Mehta</h2>
+
+                        <div class="persona-card mb-5">
+                            <h3>Dr. Asha Mehta</h3>
+                            <p class="persona-role">Senior Lecturer, Digital Media &amp; Communications — Northgate College</p>
+                            <ul>
+                                <li>52 years old; 20 years in higher education</li>
+                                <li>Teaches a second-year unit on digital communication and online presence</li>
+                                <li>Uses a university Windows laptop and Firefox browser, often on a ageing tablet in meetings</li>
+                                <li>Has mild colour-vision deficiency (deuteranomaly) and relies on high-contrast text to read comfortably</li>
+                                <li>Expects professional, navigable websites from anyone who describes themselves as a digital practitioner</li>
+                            </ul>
+                        </div>
+
+                        <span class="story-section-label">Act One</span>
+                        <h2 class="story-heading">The Discovery</h2>
+
+                        <div class="story-body">
+                            <p>It was a Tuesday afternoon in the middle of term, and Dr. Asha Mehta was fifteen minutes from a two-hour lecture on digital portfolios. She had been handed a student's printout with a web address scrawled in the margin: <em>John E. Parman — creative communication practice</em>. A colleague had recommended it as a real-world example of a practitioner building their online presence. Asha pulled it up on the projector.</p>
+
+                            <p>The homepage loaded. The heading was there — <em>john e. parman</em> — and below it a subtitle in what she could only describe as "that orange." On her ageing projector bulb, the amber text against the white background simply disappeared. She leaned closer. Nothing. She could tell <em>something</em> was written there but could not read it. A student near the front squinted. Another asked, "Is that broken?"</p>
+
+                            <div class="story-pull">"Is the text supposed to be invisible? I genuinely cannot read it." — a student, front row, out loud</div>
+
+                            <p>Asha moved past the hero section and tried to navigate to the gallery. She clicked <strong>Gallery</strong> in the nav. The images loaded, but the captions were all either generic filenames or entirely absent. When her student Priya — who uses a screen reader — tried to explore the page later that evening to prepare an analysis piece, she found the navigation impossible. The screen reader announced "image" twelve times in a row. No context. No description. No way to skip the lengthy navigation repeated at the top of every page.</p>
+
+                            <p>Things deteriorated when Asha switched to her tablet. The navigation bar, which had looked neat enough on the projector, crammed seven uppercase labels into a single row on her tablet screen without collapsing to a menu. Two labels disappeared off the right edge. She could not find <strong>Contact</strong> anywhere. She was on the Community page — a gallery of user drawings — and the navigation bar did not include a way to reach the contact section at all. She tapped around for two minutes before giving up.</p>
+
+                            <div class="story-pull">"I'm trying to find a way to write to this person and there is literally no link to contact them on this page. This is a digital communications portfolio." — Asha, to herself, on her tablet</div>
+
+                            <p>She closed the browser, made a note in her planner — <em>good cautionary example, do not recommend as model</em> — and walked into her lecture.</p>
+                        </div>
+
+                        <span class="story-section-label">Act Two</span>
+                        <h2 class="story-heading">The Problems, Named</h2>
+
+                        <p class="text-muted mb-4">The site had several concrete, fixable problems — each one creating a real barrier for a real person.</p>
+
+                        <div class="issue-card">
+                            <div class="issue-label">Issue 1 — Colour Contrast</div>
+                            <strong>The orange text failed accessibility standards.</strong> The accent colour used throughout (#e67e22) produced a contrast ratio of approximately 3.0:1 against white — well below the WCAG 2.1 AA minimum of 4.5:1 for normal text. For users with colour-vision deficiency or on low-quality displays, it was effectively invisible.
+                        </div>
+
+                        <div class="issue-card">
+                            <div class="issue-label">Issue 2 — Missing Alt Text</div>
+                            <strong>Gallery images had no meaningful descriptions.</strong> Without descriptive <code>alt</code> attributes, screen-reader users received no information about the images. Users who rely on assistive technology to explore visual content were entirely excluded.
+                        </div>
+
+                        <div class="issue-card">
+                            <div class="issue-label">Issue 3 — No Skip Navigation</div>
+                            <strong>Every page forced keyboard and screen-reader users through the full nav on every visit.</strong> Without a skip-to-content link, Priya's screen reader had to announce all navigation items on every single page before reaching the main content.
+                        </div>
+
+                        <div class="issue-card">
+                            <div class="issue-label">Issue 4 — Inconsistent Navigation</div>
+                            <strong>The Community page and Wireframe page had no Contact link.</strong> These pages replaced the Contact item with their own page name, meaning anyone arriving at those pages could not easily navigate to get in touch.
+                        </div>
+
+                        <div class="issue-card">
+                            <div class="issue-label">Issue 5 — Broken Tablet Layout</div>
+                            <strong>The navigation expanded on tablets, causing overflow.</strong> Seven uppercase nav items at full size exceeded the available width on medium screens. Labels were cut off. The nav did not collapse to a hamburger until the phone breakpoint — too late.
+                        </div>
+
+                        <div class="issue-card">
+                            <div class="issue-label">Issue 6 — Mobile Hamburger Stays Open</div>
+                            <strong>Tapping an anchor link in the mobile menu left the menu open.</strong> On a phone, selecting <em>About</em> or <em>Contact</em> from the hamburger menu would scroll the page but leave the menu covering the content — requiring an extra tap to dismiss it.
+                        </div>
+
+                        <span class="story-section-label">Act Three</span>
+                        <h2 class="story-heading">John Gets to Work</h2>
+
+                        <div class="story-body">
+                            <p>John found out the hard way. A brief, professional message arrived in his inbox from a college email address. The sender did not introduce herself at length — she simply listed what had not worked and on what device, with the matter-of-fact efficiency of someone who grades written communication for a living. He read it twice.</p>
+
+                            <p>He had known, in a vague way, that accessibility was something to think about. He had not known, specifically, that the orange he liked so much rendered at 3.0:1 contrast on white — until he ran his own colours through WebAIM's contrast checker and saw the red fail icon appear next to the text he used everywhere. He stared at it for a moment. Then he started a list.</p>
+
+                            <div class="story-pull">"I wanted the colour to feel warm and creative. I hadn't considered that for some people it was simply absent." — John, on the contrast issue</div>
+
+                            <p>The first fix was the colour. He kept the orange for purely decorative elements — the section divider line, the card border accent — where it carried no text meaning. For anything a user needed to <em>read</em>, he switched to a darker amber: <code>#b45309</code>, which passes WCAG AA at 5.0:1 on white. The warmth was preserved; the information was now readable.</p>
+
+                            <p>Next came the alt text. He went through each gallery image deliberately, writing descriptions that conveyed subject, composition, and context — not just labels, but actual sentences. A photograph of a painted performance space became: <em>"Abstract stage set with bold geometric shapes in red and yellow, photographed under theatrical lighting during a live performance."</em> He thought about what someone who could not see the image would actually need to know.</p>
+
+                            <p>The skip link came next — a single line of HTML at the very top of every page, visually hidden until focused, that jumped directly to the main content. Small. Invisible to most users. Invaluable to those who needed it. He added it to all six pages and tested it with keyboard navigation until it worked cleanly.</p>
+
+                            <p>The navigation inconsistency required him to look at every page side by side. He realised that the Community and Wireframe pages had been built at different times, and when the page-specific nav items were added, nobody had checked whether Contact was still present. It was not. He added it. He also decided that seven or eight items expanding into a single row on a tablet was fundamentally unreliable, and moved the hamburger collapse point from 768px (tablets) to 992px (desktop only), so that phones and tablets always got the clean, collapsible menu.</p>
+
+                            <p>Finally, the mobile menu behaviour. A single JavaScript listener, nine lines of code, checked whether the Bootstrap collapse was open when a link was tapped and closed it immediately. The fix took less time to write than the problem had taken Asha to describe.</p>
+                        </div>
+
+                        <div class="row g-3 my-4">
+                            <div class="col-12 col-sm-6">
+                                <div class="fix-card">
+                                    <div class="fix-label">Fix 1 — Contrast</div>
+                                    Accent text colour changed from <code>#e67e22</code> (3.0:1) to <code>#b45309</code> (5.0:1), meeting WCAG AA for all body text.
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="fix-card">
+                                    <div class="fix-label">Fix 2 — Alt Text</div>
+                                    Descriptive <code>alt</code> attributes written for all gallery images, conveying subject and context.
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="fix-card">
+                                    <div class="fix-label">Fix 3 — Skip Link</div>
+                                    A visually-hidden skip-to-content link added at the top of every page, keyboard-accessible on focus.
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="fix-card">
+                                    <div class="fix-label">Fix 4 — Consistent Nav</div>
+                                    Contact link added to Community and Wireframe pages. All pages now share an identical nav structure.
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="fix-card">
+                                    <div class="fix-label">Fix 5 — Tablet Layout</div>
+                                    Changed <code>navbar-expand-md</code> to <code>navbar-expand-lg</code>. Hamburger now appears below 992px — tablets always collapse cleanly.
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="fix-card">
+                                    <div class="fix-label">Fix 6 — Mobile Menu</div>
+                                    JavaScript closes the hamburger menu immediately when any nav link is tapped, so content is visible without an extra dismiss tap.
+                                </div>
+                            </div>
+                        </div>
+
+                        <span class="story-section-label">Act Four</span>
+                        <h2 class="story-heading">The Return Visit</h2>
+
+                        <div class="story-body">
+                            <p>Three weeks later, Asha was preparing a new lecture — this one on iterative improvement in digital practice. She wanted a real example. She typed the address from her planner.</p>
+
+                            <p>The page loaded. The heading was there. Below it, the subtitle in a warm, readable amber that she could see clearly — not disappeared into the white, not orange-washed by the projector, but actually there and actually legible. She scrolled. The gallery loaded. She opened her screen reader, the one she always kept installed for teaching demos, and tabbed through the images. Descriptions. Context. <em>Sentences.</em></p>
+
+                            <p>She tapped the hamburger on her tablet. The menu opened cleanly. She selected <em>Community</em>. The menu closed. The page loaded. She looked at the navigation bar at the top of the Community page. <strong>Contact</strong> was there.</p>
+
+                            <div class="story-pull">"This is what we mean by iterative development. Someone used this, found it wanting, said so clearly, and it was made better. That is the process." — Dr. Asha Mehta, to her 9am digital media class</div>
+
+                            <p>She added it to her lecture notes. Not as a cautionary example. As a demonstration of something rarer and more useful: a practitioner who listened, understood what had actually gone wrong, and fixed it systematically — not just aesthetically, but structurally.</p>
+
+                            <p>She did not message John again. She did not need to. The site spoke for itself.</p>
+                        </div>
+
+                        <div class="story-outcome mt-2">
+                            <h2 class="h5 fw-bold mb-3" style="color:var(--primary-color)">What this story demonstrates</h2>
+                            <ul class="mb-0" style="color:var(--text-main); line-height:1.8;">
+                                <li><strong>Accessibility is not optional decoration</strong> — it determines whether real people can use a site at all.</li>
+                                <li><strong>Feedback from users, however uncomfortable, is invaluable</strong> — Asha's plain-spoken email was more useful than any checklist.</li>
+                                <li><strong>Most problems have specific, nameable causes</strong> — contrast ratios, missing attributes, wrong breakpoints — and specific, testable fixes.</li>
+                                <li><strong>Iterative improvement is the norm, not the exception</strong> — the site did not need to be rebuilt; it needed to be listened to and corrected.</li>
+                                <li><strong>A safe environment online means everyone can navigate, read, and reach you</strong> — regardless of their device, vision, or motor ability.</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="site-footer" class="py-4" style="background-color: var(--primary-color);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 text-center text-md-start small mb-2 mb-md-0" style="color:var(--footer-link);">
+                    &copy; 2025 John E. Parman. All rights reserved.
+                </div>
+                <nav class="col-12 col-md-6 text-center text-md-end" aria-label="Footer navigation">
+                    <a href="index.html" class="footer-link me-3">Home</a>
+                    <a href="gallery.html" class="footer-link me-3">Gallery</a>
+                    <a href="contact.html" class="footer-link me-3">Draw</a>
+                    <a href="drawback.html" class="footer-link me-3">Community</a>
+                    <a href="bookmarks.html" class="footer-link me-3">Bookmarks</a>
+                    <a href="story.html" class="footer-link me-3">Story</a>
+                    <a href="wireframe.html" class="footer-link">Wireframe</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="assets/nav.js"></script>
+</body>
+
+</html>
