@@ -12,12 +12,14 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-md sticky-top" id="mainNav">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav class="navbar navbar-expand-md sticky-top" id="mainNav" aria-label="Main navigation">
         <div class="container">
-            <a class="navbar-brand" href="index.html">parman</a>
+            <a class="navbar-brand" href="index.html" aria-label="John E. Parman — Home">parman</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false"
-                aria-label="Toggle navigation">
+                aria-label="Toggle navigation menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarMain">
@@ -55,27 +57,30 @@
         </div>
     </header>
 
-    <main class="section-pad">
+    <main id="main-content" class="section-pad">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-9">
 
-                    <div class="draw-toolbar d-flex justify-content-center align-items-center flex-wrap gap-2 mb-4">
-                        <span class="text-muted me-2 small fw-semibold">COLOUR:</span>
-                        <button class="btn color-btn" style="background:#000000; color:white;"
-                            onclick="setColor('#000000')" title="Black">Black</button>
-                        <button class="btn color-btn" style="background:#E69F00;"
-                            onclick="setColor('#E69F00')" title="Orange">Orange</button>
-                        <button class="btn color-btn" style="background:#56B4E9;"
-                            onclick="setColor('#56B4E9')" title="Sky Blue">Sky Blue</button>
-                        <button class="btn color-btn" style="background:#009E73; color:white;"
-                            onclick="setColor('#009E73')" title="Green">Green</button>
-                        <div class="vr mx-2"></div>
-                        <button class="btn btn-outline-danger" onclick="clearCanvas()">Clear</button>
+                    <div class="draw-toolbar d-flex justify-content-center align-items-center flex-wrap gap-2 mb-4"
+                        role="group" aria-label="Drawing colour options">
+                        <span class="text-muted me-2 small fw-semibold" aria-hidden="true">COLOUR:</span>
+                        <button class="btn color-btn" style="background:#000000; color:#ffffff;"
+                            onclick="setColor('#000000', this)" aria-label="Select black" aria-pressed="true">Black</button>
+                        <button class="btn color-btn" style="background:#E69F00; color:#000000;"
+                            onclick="setColor('#E69F00', this)" aria-label="Select orange" aria-pressed="false">Orange</button>
+                        <button class="btn color-btn" style="background:#56B4E9; color:#000000;"
+                            onclick="setColor('#56B4E9', this)" aria-label="Select sky blue" aria-pressed="false">Sky Blue</button>
+                        <button class="btn color-btn" style="background:#009E73; color:#ffffff;"
+                            onclick="setColor('#009E73', this)" aria-label="Select green" aria-pressed="false">Green</button>
+                        <div class="vr mx-2" aria-hidden="true"></div>
+                        <button class="btn btn-outline-danger" onclick="clearCanvas()" aria-label="Clear the canvas">Clear</button>
                     </div>
 
                     <canvas id="drawingCanvas" width="800" height="450"
-                        aria-label="Drawing canvas"></canvas>
+                        role="img"
+                        aria-label="Interactive drawing canvas — use your mouse or finger to draw"
+                        tabindex="0"></canvas>
 
                     <div class="text-center mt-4 d-flex justify-content-center gap-3 flex-wrap">
                         <button class="btn btn-primary btn-lg" onclick="saveDrawing()">
@@ -95,15 +100,16 @@
         <div class="container">
             <hr class="border-secondary">
             <div class="row py-3">
-                <div class="col-12 col-md-6 text-center text-md-start text-white-50 small mb-2 mb-md-0">
+                <div class="col-12 col-md-6 text-center text-md-start small mb-2 mb-md-0" style="color:var(--footer-link);">
                     &copy; 2025 John E. Parman. All rights reserved.
                 </div>
-                <div class="col-12 col-md-6 text-center text-md-end">
+                <nav class="col-12 col-md-6 text-center text-md-end" aria-label="Footer navigation">
                     <a href="index.html" class="footer-link me-3">Home</a>
                     <a href="gallery.html" class="footer-link me-3">Gallery</a>
                     <a href="contact.html" class="footer-link me-3">Draw</a>
-                    <a href="drawback.html" class="footer-link">Community</a>
-                </div>
+                    <a href="drawback.html" class="footer-link me-3">Community</a>
+                    <a href="wireframe.html" class="footer-link">Wireframe</a>
+                </nav>
             </div>
         </div>
     </footer>
@@ -115,13 +121,20 @@
         const ctx = canvas.getContext('2d');
         let painting = false;
         let color = '#000000';
+        let activeBtn = document.querySelector('.color-btn');
 
         ctx.lineWidth = 5;
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
 
-        function setColor(newColor) {
+        function setColor(newColor, btn) {
             color = newColor;
+            document.querySelectorAll('.color-btn').forEach(b => {
+                b.classList.remove('selected');
+                b.setAttribute('aria-pressed', 'false');
+            });
+            btn.classList.add('selected');
+            btn.setAttribute('aria-pressed', 'true');
         }
 
         function clearCanvas() {
