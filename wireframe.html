@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Design — John E. Parman</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body class="wireframe-page">
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav class="navbar navbar-expand-md sticky-top" id="mainNav" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" aria-label="John E. Parman — Home">parman</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav ms-auto gap-1">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Draw</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="wireframe.html">Wireframe</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">Wireframe Design</h1>
+            <p class="lead mb-0">
+                The structural layout plan for this website — showing the skeleton of each page
+                before design and content were applied.
+            </p>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <!-- ======================================
+             WHAT IS A WIREFRAME?
+        ======================================= -->
+        <section class="wf-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-9">
+                        <h2 class="section-title">What Is a Wireframe?</h2>
+                        <div class="section-divider" aria-hidden="true"></div>
+                        <p>
+                            A wireframe is a low-fidelity visual guide that shows the structure and layout of a
+                            web page. It defines <strong>where</strong> elements are positioned without styling
+                            or imagery — think of it as the architectural blueprint before the building is
+                            constructed. Wireframes are used in the planning phase to agree on layout,
+                            navigation, and information hierarchy.
+                        </p>
+                        <p>
+                            The diagrams below show the wireframe for each page on this site, including the
+                            navigation, header, content areas, and footer structure.
+                        </p>
+                        <p class="text-muted small">
+                            <strong>Legend:</strong>
+                            Dashed boxes represent content areas &nbsp;|&nbsp;
+                            Dark bars represent navigation or headers &nbsp;|&nbsp;
+                            Grey blocks represent images &nbsp;|&nbsp;
+                            Rounded rectangles represent buttons.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================
+             PAGE 1: HOME
+        ======================================= -->
+        <section class="wf-section" aria-labelledby="wf-home-title">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-9">
+                        <p class="wf-page-title" id="wf-home-title">Page 1 — Home (index.html)</p>
+                        <p class="wf-page-desc">Single-page layout with anchored sections: Hero, About, Portfolio, and Contact/Footer.</p>
+
+                        <div class="wf-annotation" role="note">
+                            <strong>Design decision:</strong> All primary sections live on the home page so visitors can scroll through the entire site narrative without navigating away.
+                        </div>
+
+                        <figure class="wf-diagram" aria-label="Wireframe diagram for the Home page">
+                            <!-- NAV -->
+                            <div class="wf-nav-bar" aria-hidden="true">
+                                <span>PARMAN</span>
+                                <div class="wf-nav-links">
+                                    <span>[HOME]</span><span>ABOUT</span><span>PORTFOLIO</span>
+                                    <span>GALLERY</span><span>DRAW</span><span>CONTACT</span>
+                                </div>
+                            </div>
+
+                            <!-- HERO -->
+                            <div class="wf-label" aria-hidden="true">HERO SECTION</div>
+                            <div class="wf-block wf-hero" aria-hidden="true">
+                                <div style="font-size:1.1rem; font-weight:700; color:#2c3e50;">[ H1 — John E. Parman ]</div>
+                                <div style="color:#b45309; font-style:italic;">[ H2 — Creative Communication Practice ]</div>
+                                <p style="color:#555; font-size:0.7rem; max-width:400px; margin:4px 0;">[ Lead paragraph — welcome text, roles, and invitation ]</p>
+                                <div>
+                                    <span class="wf-btn">Learn More ↓</span>
+                                    <span class="wf-btn" style="background:transparent; border:2px solid #2c3e50; color:#2c3e50;">Get in Touch ↓</span>
+                                </div>
+                            </div>
+
+                            <!-- ABOUT -->
+                            <div class="wf-label" aria-hidden="true">ABOUT SECTION (#about anchor)</div>
+                            <div class="wf-grid wf-grid-15" aria-hidden="true">
+                                <div class="wf-img">[ Portrait photo ]</div>
+                                <div class="wf-block" style="text-align:left; min-height:80px;">
+                                    [ 5 paragraphs of biographical text about practice, training, and activities ]
+                                </div>
+                            </div>
+
+                            <!-- PORTFOLIO -->
+                            <div class="wf-label" aria-hidden="true">PORTFOLIO SECTION (#portfolio anchor)</div>
+                            <div class="wf-grid wf-grid-3" aria-hidden="true">
+                                <div class="wf-block" style="padding:8px;">
+                                    <div class="wf-img" style="min-height:45px; margin-bottom:6px;">[ Photo ]</div>
+                                    <div style="font-weight:700;">Gallery</div>
+                                    <div style="font-size:0.65rem; color:#555;">Artistic works across mediums</div>
+                                    <span class="wf-btn" style="font-size:0.65rem; margin-top:6px; display:inline-block;">Visit Gallery</span>
+                                </div>
+                                <div class="wf-block" style="padding:8px;">
+                                    <div class="wf-img" style="min-height:45px; margin-bottom:6px;">[ Screenshot ]</div>
+                                    <div style="font-weight:700;">Floatjet</div>
+                                    <div style="font-size:0.65rem; color:#555;">Creative feedback app library</div>
+                                    <span class="wf-btn" style="font-size:0.65rem; margin-top:6px; display:inline-block;">Visit Site ↗</span>
+                                </div>
+                                <div class="wf-block" style="padding:8px;">
+                                    <div class="wf-img" style="min-height:45px; margin-bottom:6px;">[ Photo ]</div>
+                                    <div style="font-weight:700;">Art Me</div>
+                                    <div style="font-size:0.65rem; color:#555;">Interactive drawing contact</div>
+                                    <span class="wf-btn" style="font-size:0.65rem; margin-top:6px; display:inline-block;">Try It</span>
+                                </div>
+                            </div>
+
+                            <!-- CONTACT/FOOTER -->
+                            <div class="wf-label" aria-hidden="true">CONTACT FORM + FOOTER (#contact anchor)</div>
+                            <div class="wf-block wf-dark" style="margin:10px;" aria-hidden="true">
+                                <div style="font-size:0.8rem; font-weight:700; margin-bottom:8px;">[ H2 — Contact ]</div>
+                                <div class="wf-grid wf-grid-3" style="margin:0 0 8px 0;">
+                                    <div style="background:#4a6278; padding:6px; border-radius:3px; font-size:0.65rem;">[ Name input ]</div>
+                                    <div style="background:#4a6278; padding:6px; border-radius:3px; font-size:0.65rem;">[ Phone input ]</div>
+                                    <div style="background:#4a6278; padding:6px; border-radius:3px; font-size:0.65rem;">[ Email input ]</div>
+                                </div>
+                                <div style="background:#4a6278; padding:6px; border-radius:3px; font-size:0.65rem; margin-bottom:8px;">[ Message textarea ]</div>
+                                <span class="wf-btn" style="background:#b45309;">Send Message</span>
+                            </div>
+                            <div class="wf-block wf-dark" style="margin:10px; padding:8px; font-size:0.65rem; display:flex; justify-content:space-between;" aria-hidden="true">
+                                <span>© 2025 John E. Parman</span>
+                                <span>Home | Gallery | Draw | Community | Wireframe</span>
+                            </div>
+                        </figure>
+                        <figcaption class="text-muted small mt-2">
+                            Home page wireframe — five sections on a single scrollable page with sticky navigation.
+                        </figcaption>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================
+             PAGE 2: GALLERY
+        ======================================= -->
+        <section class="wf-section" aria-labelledby="wf-gallery-title">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-9">
+                        <p class="wf-page-title" id="wf-gallery-title">Page 2 — Gallery (gallery.html)</p>
+                        <p class="wf-page-desc">A responsive image grid showing 11 photographic works, 3 columns on desktop, 2 on tablet, 1 on mobile.</p>
+
+                        <div class="wf-annotation" role="note">
+                            <strong>Design decision:</strong> Cards use consistent image heights with object-fit: cover so photos align in a clean grid regardless of source dimensions.
+                        </div>
+
+                        <figure class="wf-diagram" aria-label="Wireframe diagram for the Gallery page">
+                            <div class="wf-nav-bar" aria-hidden="true">
+                                <span>PARMAN</span>
+                                <div class="wf-nav-links">
+                                    <span>HOME</span><span>ABOUT</span><span>PORTFOLIO</span>
+                                    <span style="color:#fbbf24; font-weight:700;">[GALLERY]</span><span>DRAW</span><span>CONTACT</span>
+                                </div>
+                            </div>
+                            <div class="wf-block wf-dark" style="margin:10px; min-height:70px; display:flex; flex-direction:column; justify-content:center;" aria-hidden="true">
+                                <div style="font-size:1rem; font-weight:700;">[ H1 — Gallery ]</div>
+                                <div style="font-size:0.7rem; opacity:0.8; margin-top:4px;">[ Introductory paragraph about artistic works ]</div>
+                            </div>
+                            <div class="wf-label" aria-hidden="true">PHOTO GRID — 11 works (3 columns × 4 rows, last row partial)</div>
+                            <div class="wf-grid wf-grid-3" aria-hidden="true">
+                                <div class="wf-block" style="padding:6px;">
+                                    <div class="wf-img" style="min-height:50px; margin-bottom:5px;">[ Photo 1 ]</div>
+                                    <div style="font-size:0.65rem; font-weight:700;">Title + Year</div>
+                                </div>
+                                <div class="wf-block" style="padding:6px;">
+                                    <div class="wf-img" style="min-height:50px; margin-bottom:5px;">[ Photo 2 ]</div>
+                                    <div style="font-size:0.65rem; font-weight:700;">Title + Year</div>
+                                </div>
+                                <div class="wf-block" style="padding:6px;">
+                                    <div class="wf-img" style="min-height:50px; margin-bottom:5px;">[ Photo 3 ]</div>
+                                    <div style="font-size:0.65rem; font-weight:700;">Title + Year</div>
+                                </div>
+                                <div class="wf-block" style="padding:6px;">
+                                    <div class="wf-img" style="min-height:50px; margin-bottom:5px;">[ Photo 4 ]</div>
+                                    <div style="font-size:0.65rem; font-weight:700;">Title + Year</div>
+                                </div>
+                                <div class="wf-block" style="padding:6px;">
+                                    <div class="wf-img" style="min-height:50px; margin-bottom:5px;">[ Photo 5 ]</div>
+                                    <div style="font-size:0.65rem; font-weight:700;">Title + Year</div>
+                                </div>
+                                <div class="wf-block" style="padding:6px;">
+                                    <div class="wf-img" style="min-height:50px; margin-bottom:5px;">[ Photo 6 ]</div>
+                                    <div style="font-size:0.65rem; font-weight:700;">Title + Year</div>
+                                </div>
+                            </div>
+                            <div class="wf-block" style="margin:0 10px 4px; font-size:0.65rem; color:#888; text-align:center;" aria-hidden="true">
+                                [ … 5 more photo cards following same pattern ]
+                            </div>
+                            <div class="wf-block wf-dark" style="margin:10px; padding:8px; font-size:0.65rem; display:flex; justify-content:space-between;" aria-hidden="true">
+                                <span>© 2025 John E. Parman</span>
+                                <span>Home | Gallery | Draw | Community | Wireframe</span>
+                            </div>
+                        </figure>
+                        <figcaption class="text-muted small mt-2">
+                            Gallery page wireframe — responsive 3-column photo grid with consistent card heights.
+                        </figcaption>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================
+             PAGE 3: DRAW
+        ======================================= -->
+        <section class="wf-section" aria-labelledby="wf-draw-title">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-9">
+                        <p class="wf-page-title" id="wf-draw-title">Page 3 — Draw a Message (contact.html)</p>
+                        <p class="wf-page-desc">An interactive drawing tool using the HTML Canvas API, with colourblind-safe colour options and a submit-to-gallery action.</p>
+
+                        <div class="wf-annotation" role="note">
+                            <strong>Design decision:</strong> Colours are selected from a colourblind-safe palette (Okabe–Ito). The canvas scales responsively and supports both mouse and touch events for tablet/mobile use.
+                        </div>
+
+                        <figure class="wf-diagram" aria-label="Wireframe diagram for the Draw page">
+                            <div class="wf-nav-bar" aria-hidden="true">
+                                <span>PARMAN</span>
+                                <div class="wf-nav-links">
+                                    <span>HOME</span><span>ABOUT</span><span>PORTFOLIO</span>
+                                    <span>GALLERY</span><span style="color:#fbbf24; font-weight:700;">[DRAW]</span><span>CONTACT</span>
+                                </div>
+                            </div>
+                            <div class="wf-block wf-dark" style="margin:10px; min-height:70px; display:flex; flex-direction:column; justify-content:center;" aria-hidden="true">
+                                <div style="font-size:1rem; font-weight:700;">[ H1 — Draw a Message ]</div>
+                                <div style="font-size:0.7rem; opacity:0.8; margin-top:4px;">[ Subtext: select a colour and draw; submit to gallery ]</div>
+                            </div>
+                            <div class="wf-label" aria-hidden="true">COLOUR TOOLBAR</div>
+                            <div class="wf-block" style="margin:10px; display:flex; gap:8px; justify-content:center; align-items:center; flex-wrap:wrap;" aria-hidden="true">
+                                <span class="wf-btn" style="background:#000;">Black</span>
+                                <span class="wf-btn" style="background:#E69F00; color:#000;">Orange</span>
+                                <span class="wf-btn" style="background:#56B4E9; color:#000;">Sky Blue</span>
+                                <span class="wf-btn" style="background:#009E73;">Green</span>
+                                <span class="wf-btn" style="background:transparent; border:2px solid #dc3545; color:#dc3545;">Clear</span>
+                            </div>
+                            <div class="wf-label" aria-hidden="true">DRAWING CANVAS (800 × 450px, scales to 100% width)</div>
+                            <div class="wf-canvas" aria-hidden="true">
+                                [ Interactive HTML &lt;canvas&gt; element — crosshair cursor, white background ]<br>
+                                Mouse + touch drawing supported
+                            </div>
+                            <div class="wf-block" style="margin:10px; text-align:center;" aria-hidden="true">
+                                <span class="wf-btn" style="background:#b45309;">Submit to Gallery</span>
+                                &nbsp;
+                                <span class="wf-btn" style="background:transparent; border:2px solid #2c3e50; color:#2c3e50;">View Community Gallery →</span>
+                            </div>
+                            <div class="wf-block wf-dark" style="margin:10px; padding:8px; font-size:0.65rem; display:flex; justify-content:space-between;" aria-hidden="true">
+                                <span>© 2025 John E. Parman</span>
+                                <span>Home | Gallery | Draw | Community | Wireframe</span>
+                            </div>
+                        </figure>
+                        <figcaption class="text-muted small mt-2">
+                            Draw page wireframe — colour toolbar, full-width canvas, and submit action to community gallery.
+                        </figcaption>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================
+             PAGE 4: COMMUNITY GALLERY
+        ======================================= -->
+        <section class="wf-section" aria-labelledby="wf-community-title">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-9">
+                        <p class="wf-page-title" id="wf-community-title">Page 4 — Community Gallery (drawback.html)</p>
+                        <p class="wf-page-desc">Dynamically renders drawings saved by visitors via the browser's localStorage API. Empty state provides a clear call-to-action.</p>
+
+                        <div class="wf-annotation" role="note">
+                            <strong>Design decision:</strong> Drawings are stored in <code>localStorage</code> so no server or database is required. Each visitor sees their own saved drawings. A "No drawings yet" empty state guides first-time visitors to the Draw page.
+                        </div>
+
+                        <figure class="wf-diagram" aria-label="Wireframe diagram for the Community Gallery page">
+                            <div class="wf-nav-bar" aria-hidden="true">
+                                <span>PARMAN</span>
+                                <div class="wf-nav-links">
+                                    <span>HOME</span><span>ABOUT</span><span>PORTFOLIO</span>
+                                    <span>GALLERY</span><span>DRAW</span>
+                                    <span style="color:#fbbf24; font-weight:700;">[COMMUNITY]</span>
+                                </div>
+                            </div>
+                            <div class="wf-block wf-dark" style="margin:10px; min-height:70px; display:flex; flex-direction:column; justify-content:center;" aria-hidden="true">
+                                <div style="font-size:1rem; font-weight:700;">[ H1 — Community Gallery ]</div>
+                                <div style="font-size:0.7rem; opacity:0.8; margin-top:4px;">[ Subtext about visitor drawings ]</div>
+                            </div>
+                            <div class="wf-label" aria-hidden="true">DYNAMIC GALLERY (rendered by JavaScript from localStorage)</div>
+                            <div class="wf-grid wf-grid-3" aria-hidden="true">
+                                <div class="wf-block" style="padding:6px;">
+                                    <div class="wf-img" style="min-height:50px; margin-bottom:5px; font-size:0.6rem;">[ User drawing 1<br>canvas → base64 dataURL ]</div>
+                                    <div style="font-size:0.6rem; color:#888;">Submission #1</div>
+                                </div>
+                                <div class="wf-block" style="padding:6px;">
+                                    <div class="wf-img" style="min-height:50px; margin-bottom:5px; font-size:0.6rem;">[ User drawing 2 ]</div>
+                                    <div style="font-size:0.6rem; color:#888;">Submission #2</div>
+                                </div>
+                                <div class="wf-block" style="padding:6px; border-style:dashed; color:#aaa; display:flex; align-items:center; justify-content:center; min-height:80px; font-size:0.65rem; text-align:center;">
+                                    [ Empty state: "No drawings yet" + CTA button ]
+                                </div>
+                            </div>
+                            <div class="wf-block" style="margin:10px; text-align:center;" aria-hidden="true">
+                                <span class="wf-btn">Add Your Drawing →</span>
+                            </div>
+                            <div class="wf-block wf-dark" style="margin:10px; padding:8px; font-size:0.65rem; display:flex; justify-content:space-between;" aria-hidden="true">
+                                <span>© 2025 John E. Parman</span>
+                                <span>Home | Gallery | Draw | Community | Wireframe</span>
+                            </div>
+                        </figure>
+                        <figcaption class="text-muted small mt-2">
+                            Community Gallery wireframe — dynamic grid populated from localStorage with empty-state handling.
+                        </figcaption>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================
+             ACCESSIBILITY NOTES
+        ======================================= -->
+        <section class="wf-section" aria-labelledby="wf-a11y-title">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-9">
+                        <h2 class="section-title" id="wf-a11y-title">Accessibility Design Notes</h2>
+                        <div class="section-divider" aria-hidden="true"></div>
+                        <div class="row g-4">
+                            <div class="col-12 col-md-6">
+                                <div class="card h-100 p-3">
+                                    <h3 class="card-title h6">Colour Contrast</h3>
+                                    <p class="card-text small">All text colours meet WCAG 2.1 Level AA (minimum 4.5:1 contrast ratio on their background). Dark blue <code>#2c3e50</code> on white achieves 11.4:1. Dark amber <code>#b45309</code> on white achieves 5.0:1.</p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="card h-100 p-3">
+                                    <h3 class="card-title h6">Alternative Text</h3>
+                                    <p class="card-text small">All images carry descriptive <code>alt</code> attributes that convey meaning to screen reader users. Decorative structural elements use <code>aria-hidden="true"</code>.</p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="card h-100 p-3">
+                                    <h3 class="card-title h6">Keyboard Navigation</h3>
+                                    <p class="card-text small">A "Skip to main content" link is the first element on every page, allowing keyboard users to bypass the navigation. All interactive elements are reachable and operable by keyboard with visible focus indicators.</p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="card h-100 p-3">
+                                    <h3 class="card-title h6">Semantic Structure</h3>
+                                    <p class="card-text small">Pages use semantic HTML5 landmarks: <code>&lt;nav&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;footer&gt;</code>. ARIA labels distinguish multiple navigation regions.</p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="card h-100 p-3">
+                                    <h3 class="card-title h6">Colourblind-Safe Palette</h3>
+                                    <p class="card-text small">The drawing tool uses the Okabe–Ito palette (Black, Orange #E69F00, Sky Blue #56B4E9, Green #009E73) — a set shown to be distinguishable by people with all common forms of colour vision deficiency.</p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="card h-100 p-3">
+                                    <h3 class="card-title h6">Form Accessibility</h3>
+                                    <p class="card-text small">All form inputs have explicit <code>&lt;label&gt;</code> elements linked by matching <code>for</code>/<code>id</code> attributes. Required fields are marked with <code>required</code> and <code>aria-required="true"</code>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <hr class="border-secondary">
+            <div class="row py-3">
+                <div class="col-12 col-md-6 text-center text-md-start small mb-2 mb-md-0" style="color:var(--footer-link);">
+                    &copy; 2025 John E. Parman. All rights reserved.
+                </div>
+                <nav class="col-12 col-md-6 text-center text-md-end" aria-label="Footer navigation">
+                    <a href="index.html" class="footer-link me-3">Home</a>
+                    <a href="gallery.html" class="footer-link me-3">Gallery</a>
+                    <a href="contact.html" class="footer-link me-3">Draw</a>
+                    <a href="drawback.html" class="footer-link me-3">Community</a>
+                    <a href="wireframe.html" class="footer-link">Wireframe</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>
