@@ -341,7 +341,29 @@ body {
 }
 
 /* =============================================
-   13. Wireframe Page (wireframe.html)
+   13. Featured Video Section
+   ============================================= */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    background-color: #000;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* =============================================
+   14. Wireframe Page (wireframe.html)
    ============================================= */
 .wireframe-page {
     background-color: #f8f9fa;
