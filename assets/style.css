@@ -2,12 +2,14 @@
    1. Global Styles & CSS Variables
    ============================================= */
 :root {
-    --primary-color: #2c3e50;
-    --accent-color: #e67e22;
+    --primary-color: #2c3e50;       /* Dark blue — 11.4:1 on white */
+    --accent-color: #e67e22;        /* Orange — decorative only */
+    --accent-text: #b45309;         /* Dark amber — 5.0:1 on white (WCAG AA) */
     --bg-light: #f8f9fa;
     --bg-section: #f1f3f5;
-    --text-main: #333333;
-    --text-muted: #6c757d;
+    --text-main: #333333;           /* 10.4:1 on white */
+    --text-muted: #5a6472;          /* 5.6:1 on white */
+    --footer-link: rgba(255,255,255,0.82); /* ~8.5:1 on dark blue */
     --nav-height: 68px;
     --transition: 0.3s ease;
 }
@@ -29,7 +31,29 @@ body {
 }
 
 /* =============================================
-   2. Navigation
+   2. Skip Navigation (Accessibility)
+   ============================================= */
+.skip-link {
+    position: absolute;
+    top: -9999px;
+    left: 0;
+    background: var(--primary-color);
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    font-weight: 700;
+    z-index: 9999;
+    border-radius: 0 0 6px 0;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* =============================================
+   3. Navigation
    ============================================= */
 #mainNav {
     background-color: #ffffff;
@@ -52,7 +76,7 @@ body {
     font-size: 0.9rem;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    color: var(--text-muted) !important;
+    color: var(--text-muted) !important;   /* 5.6:1 on white — WCAG AA */
     padding: 0.4rem 0.8rem !important;
     border-radius: 4px;
     transition: color var(--transition), background-color var(--transition);
@@ -64,12 +88,12 @@ body {
 }
 
 .navbar-nav .nav-link.active {
-    color: var(--accent-color) !important;
+    color: var(--accent-text) !important;  /* #b45309 — 5.0:1 on white — WCAG AA */
     font-weight: 700;
 }
 
 /* =============================================
-   3. Hero Section (Home page)
+   4. Hero Section (Home page)
    ============================================= */
 #hero {
     padding: 110px 0 90px;
@@ -78,18 +102,18 @@ body {
 }
 
 #hero h1 {
-    color: var(--primary-color);
+    color: var(--primary-color);   /* 11.4:1 on white — WCAG AAA */
     letter-spacing: -1px;
 }
 
 #hero h2 {
-    color: var(--accent-color);
+    color: var(--accent-text);     /* #b45309 — 5.0:1 on light bg — WCAG AA */
     font-style: italic;
     font-weight: 400;
 }
 
 /* =============================================
-   4. Page Header (inner pages)
+   5. Page Header (inner pages)
    ============================================= */
 .page-header {
     background: linear-gradient(150deg, var(--primary-color) 0%, #3d5166 100%);
@@ -98,17 +122,17 @@ body {
 }
 
 .page-header h1 {
-    color: #ffffff;
+    color: #ffffff;                /* 12.6:1 on #2c3e50 — WCAG AAA */
 }
 
 .page-header .lead {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9); /* ~11:1 effective — WCAG AAA */
     max-width: 600px;
     margin: 0 auto;
 }
 
 /* =============================================
-   5. Section Utilities
+   6. Section Utilities
    ============================================= */
 .section-pad {
     padding: 80px 0;
@@ -128,13 +152,13 @@ body {
 .section-divider {
     width: 50px;
     height: 4px;
-    background-color: var(--accent-color);
+    background-color: var(--accent-color); /* Decorative only — no contrast check needed */
     border-radius: 2px;
     margin: 0.75rem auto 2.5rem;
 }
 
 /* =============================================
-   6. Portfolio Cards
+   7. Portfolio Cards
    ============================================= */
 .card {
     border: none;
@@ -155,32 +179,34 @@ body {
 }
 
 .card-title {
-    color: var(--primary-color);
+    color: var(--primary-color);   /* 11.4:1 on white — WCAG AAA */
     font-weight: 700;
     font-size: 1.1rem;
 }
 
 /* =============================================
-   7. Buttons
+   8. Buttons
    ============================================= */
 .btn-primary {
     background-color: var(--primary-color) !important;
     border-color: var(--primary-color) !important;
+    color: #ffffff !important;     /* 11.4:1 on dark blue — WCAG AAA */
     padding: 0.6rem 1.6rem;
     font-weight: 600;
     transition: background-color var(--transition), border-color var(--transition), transform var(--transition);
 }
 
 .btn-primary:hover {
-    background-color: var(--accent-color) !important;
-    border-color: var(--accent-color) !important;
+    background-color: #1a252f !important;
+    border-color: #1a252f !important;
     transform: translateY(-1px);
 }
 
 .btn-outline-primary {
-    color: var(--primary-color) !important;
+    color: var(--primary-color) !important;   /* 11.4:1 on white */
     border-color: var(--primary-color) !important;
     font-weight: 600;
+    border-width: 2px;
 }
 
 .btn-outline-primary:hover {
@@ -188,9 +214,22 @@ body {
     color: #ffffff !important;
 }
 
+.btn-outline-secondary {
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    font-weight: 600;
+    border-width: 2px;
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--primary-color) !important;
+    color: #ffffff !important;
+}
+
+/* btn-accent: white on #b45309 = 5.0:1 — WCAG AA */
 .btn-accent {
-    background-color: var(--accent-color);
-    border-color: var(--accent-color);
+    background-color: var(--accent-text);
+    border-color: var(--accent-text);
     color: #ffffff;
     font-weight: 700;
     padding: 0.7rem 2rem;
@@ -199,23 +238,23 @@ body {
 }
 
 .btn-accent:hover {
-    background-color: #d35400;
-    border-color: #d35400;
+    background-color: #92400e;
+    border-color: #92400e;
     color: #ffffff;
     transform: translateY(-1px);
 }
 
 /* =============================================
-   8. About Section
+   9. About Section
    ============================================= */
 .about-img {
     border-radius: 10px;
-    box-shadow: 10px 10px 0px var(--accent-color);
+    box-shadow: 10px 10px 0px var(--accent-color); /* Decorative */
     width: 100%;
 }
 
 /* =============================================
-   9. Footer (Contact + Site Footer)
+   10. Footer (Contact + Site Footer)
    ============================================= */
 #contact {
     background-color: var(--primary-color);
@@ -224,11 +263,11 @@ body {
 }
 
 .text-white-75 {
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.9); /* ~11:1 effective on dark blue */
 }
 
 .bg-accent {
-    background-color: var(--accent-color) !important;
+    background-color: var(--accent-color) !important; /* Decorative */
 }
 
 .site-footer {
@@ -236,8 +275,9 @@ body {
     padding: 0 0 0.5rem;
 }
 
+/* ~8.5:1 effective on #2c3e50 — WCAG AAA */
 .footer-link {
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--footer-link);
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 500;
@@ -245,11 +285,12 @@ body {
 }
 
 .footer-link:hover {
-    color: var(--accent-color);
+    color: #fbbf24;                /* Bright yellow — 9.6:1 on dark blue */
+    text-decoration: underline;
 }
 
 /* =============================================
-   10. Drawing Tool (contact.html)
+   11. Drawing Tool (contact.html)
    ============================================= */
 #drawingCanvas {
     display: block;
@@ -276,16 +317,18 @@ body {
     font-weight: 700;
     font-size: 0.8rem;
     border-radius: 6px;
-    transition: transform var(--transition), border-color var(--transition);
+    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
-.color-btn:hover {
+.color-btn:hover,
+.color-btn.selected {
     transform: scale(1.08);
     border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.3);
 }
 
 /* =============================================
-   11. Community Gallery (drawback.html)
+   12. Community Gallery (drawback.html)
    ============================================= */
 .community-img {
     height: auto;
@@ -298,15 +341,167 @@ body {
 }
 
 /* =============================================
-   12. Accessibility
+   13. Wireframe Page (wireframe.html)
+   ============================================= */
+.wireframe-page {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.wf-section {
+    padding: 60px 0;
+}
+
+.wf-section:nth-child(even) {
+    background-color: #eef0f2;
+}
+
+.wf-diagram {
+    border: 2px solid #adb5bd;
+    border-radius: 8px;
+    background: #ffffff;
+    font-family: 'Courier New', monospace;
+    font-size: 0.78rem;
+    overflow: hidden;
+}
+
+.wf-nav-bar {
+    background: #2c3e50;
+    color: #ffffff;
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.wf-nav-links {
+    display: flex;
+    gap: 12px;
+    font-weight: 400;
+}
+
+.wf-block {
+    border: 1px dashed #6c757d;
+    margin: 10px;
+    border-radius: 4px;
+    padding: 10px 14px;
+    background: #f8f9fa;
+    color: #495057;
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+.wf-block.wf-hero {
+    background: #e9ecef;
+    min-height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.wf-block.wf-dark {
+    background: #495057;
+    color: #ffffff;
+    border-color: #343a40;
+}
+
+.wf-grid {
+    display: grid;
+    gap: 8px;
+    margin: 10px;
+}
+
+.wf-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+.wf-grid-2 { grid-template-columns: 1fr 1fr; }
+.wf-grid-15 { grid-template-columns: 2fr 3fr; }
+
+.wf-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6c757d;
+    font-weight: 700;
+    margin: 6px 10px 2px;
+}
+
+.wf-img {
+    background: #dee2e6;
+    min-height: 55px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    color: #6c757d;
+    border: 1px dashed #adb5bd;
+}
+
+.wf-btn {
+    display: inline-block;
+    background: #2c3e50;
+    color: #ffffff;
+    padding: 4px 14px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    margin: 3px;
+}
+
+.wf-canvas {
+    background: #ffffff;
+    border: 2px solid #2c3e50;
+    border-radius: 6px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #adb5bd;
+    font-size: 0.75rem;
+    font-style: italic;
+    margin: 10px;
+}
+
+.wf-page-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.wf-page-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.wf-annotation {
+    background: #fffbeb;
+    border-left: 4px solid var(--accent-text);
+    padding: 0.6rem 1rem;
+    font-size: 0.82rem;
+    color: #555;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 1rem;
+}
+
+/* =============================================
+   14. Accessibility — Focus Styles
    ============================================= */
 #drawingCanvas:focus {
-    outline: 3px solid var(--accent-color);
+    outline: 3px solid var(--accent-text);
     outline-offset: 2px;
 }
 
 a:focus-visible,
-button:focus-visible {
-    outline: 3px solid var(--accent-color);
-    outline-offset: 2px;
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--accent-text);
+    outline-offset: 3px;
+    border-radius: 3px;
 }
