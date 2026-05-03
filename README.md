@@ -175,6 +175,56 @@ All 221 checks passed across all 7 pages.
 
 ---
 
+### W3C Validator Testing
+
+Each HTML file and the custom stylesheet were submitted to the W3C HTML Validator and W3C CSS Validator.
+
+#### HTML Validation
+
+All 7 pages passed W3C HTML validation with **0 errors and 0 warnings**.
+
+| Page | Errors | Warnings |
+|---|---|---|
+| `index.html` | 0 | 0 |
+| `gallery.html` | 0 | 0 |
+| `contact.html` | 0 | 0 |
+| `drawback.html` | 0 | 0 |
+| `wireframe.html` | 0 | 0 |
+| `bookmarks.html` | 0 | 0 |
+| `story.html` | 0 | 0 |
+
+#### CSS Validation
+
+**Validated URL:** `https://qualitylemons.github.io/project-1/`  
+**Standard:** CSS level 3 + SVG  
+**Tool:** [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
+
+The project's own stylesheet (`assets/style.css`) contains no errors. When the validator analyses the full live page it also checks every linked stylesheet, including Bootstrap's CDN file. The full-page result is:
+
+| Stylesheet | Errors | Warnings | Origin |
+|---|---|---|---|
+| `assets/style.css` | 0 | 0 | Project custom styles |
+| `bootstrap.min.css` (CDN) | 124 | 949 | Bootstrap 5.3.3 — see explanation below |
+| **Total** | **124** | **949** | |
+
+**None of these errors or warnings are in this project's code.**
+
+**Why Bootstrap produces these results:**
+
+Bootstrap 5 uses CSS custom properties (variables) throughout its stylesheet — for example:
+
+```css
+color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+```
+
+The W3C CSS Validator's parser does not support CSS custom properties (`var()`) nested inside colour functions such as `rgba()`. When it encounters the closing `)` of an unresolvable `var()` call, it reports `Parse Error )` and counts it as an error. This is a **known limitation of the validator**, not a bug in Bootstrap or in this project.
+
+All 124 errors share the same cause and all originate from `bootstrap.min.css`. Affected Bootstrap selectors include `a`, `.table`, `.btn`, `.navbar`, `.card`, `.toast`, the form-floating label rules, validation state rules (`.is-valid`, `.is-invalid`), and the full set of colour utility classes (`.text-primary`, `.bg-secondary`, `.border-danger`, and so on). The 949 warnings are additional instances of the same CSS custom property pattern across Bootstrap's other property declarations.
+
+**Browsers are unaffected.** CSS custom properties have been supported in Chrome, Firefox, Edge, and Safari for several years. Every browser used in testing renders the site correctly.
+
+---
+
 ### Functionality Testing
 
 Manual tests carried out in a local browser (`python3 -m http.server 5000`). Each test was conducted in Firefox 125 on Windows 11.
