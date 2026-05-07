@@ -2,6 +2,13 @@
 
 A static HTML/CSS/JavaScript personal portfolio and creative practice site for John E. Parman: writer, community organiser, graphic designer, performance artist, researcher, and trainee web software engineer.
 
+**#W3C CSS Validator
+
+<img width="1255" height="160" alt="Screenshot 2026-05-07 201114" src="https://github.com/user-attachments/assets/954d673d-8735-428a-a1fe-599a688dd085" />
+<img width="1249" height="440" alt="Screenshot 2026-05-07 201155" src="https://github.com/user-attachments/assets/be8f48a2-7b5d-4768-9451-7031f6b3cc8e" />
+
+
+
 ## Pages
 
 | File | Description |
