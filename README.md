@@ -2,13 +2,6 @@
 
 A static HTML/CSS/JavaScript personal portfolio and creative practice site for John E. Parman: writer, community organiser, graphic designer, performance artist, researcher, and trainee web software engineer.
 
-**#W3C CSS Validator
-
-<img width="1255" height="160" alt="Screenshot 2026-05-07 201114" src="https://github.com/user-attachments/assets/954d673d-8735-428a-a1fe-599a688dd085" />
-<img width="1249" height="440" alt="Screenshot 2026-05-07 201155" src="https://github.com/user-attachments/assets/be8f48a2-7b5d-4768-9451-7031f6b3cc8e" />
-
-
-
 ## Pages
 
 | File | Description |
@@ -188,17 +181,28 @@ Each HTML file and the custom stylesheet were submitted to the W3C HTML Validato
 
 #### HTML Validation
 
-All 7 pages passed W3C HTML validation with **0 errors and 0 warnings**.
+**Tool:** [W3C Nu HTML Checker](https://validator.w3.org/nu/) — pages POSTed directly for real-time results.
 
-| Page | Errors | Warnings |
+The validator was run against all 7 pages. Five errors and seven warnings were found and fixed immediately. After fixes, all pages pass with **0 errors and 0 warnings**.
+
+| Page | Initial errors | Initial warnings | After fix |
+|---|---|---|---|
+| `index.html` | 0 | 3 | 0 errors, 0 warnings |
+| `gallery.html` | 0 | 0 | 0 errors, 0 warnings |
+| `contact.html` | 0 | 0 | 0 errors, 0 warnings |
+| `drawback.html` | 1 | 0 | 0 errors, 0 warnings |
+| `bookmarks.html` | 0 | 0 | 0 errors, 0 warnings |
+| `story.html` | 0 | 0 | 0 errors, 0 warnings |
+| `wireframe.html` | 4 | 4 | 0 errors, 0 warnings |
+
+**Issues found and fixed:**
+
+| File | Issue | Fix applied |
 |---|---|---|
-| `index.html` | 0 | 0 |
-| `gallery.html` | 0 | 0 |
-| `contact.html` | 0 | 0 |
-| `drawback.html` | 0 | 0 |
-| `wireframe.html` | 0 | 0 |
-| `bookmarks.html` | 0 | 0 |
-| `story.html` | 0 | 0 |
+| `index.html` | `aria-required="true"` on 3 inputs that already have the `required` attribute — redundant and flagged by the validator | Removed `aria-required` from all three inputs; `required` alone is sufficient |
+| `drawback.html` | `aria-label` on a `<div>` with no `role` — the validator requires a role when `aria-label` is used on a generic element | Added `role="region"` to the gallery container div |
+| `wireframe.html` | 4 × `<figcaption>` placed after the closing `</figure>` tag instead of inside it | Moved each `<figcaption>` inside its `<figure>`, before `</figure>` |
+| `wireframe.html` | 4 × `<section>` elements labelled via `aria-labelledby` pointing to a `<p>` element — validator warns sections should contain a heading | Changed the four wireframe page-title `<p>` elements to `<h2>` |
 
 #### CSS Validation
 
@@ -206,7 +210,7 @@ All 7 pages passed W3C HTML validation with **0 errors and 0 warnings**.
 **Standard:** CSS level 3 + SVG  
 **Tool:** [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
 
-The project's own stylesheet (`assets/style.css`) contains no errors. When the validator analyses the full live page it also checks every linked stylesheet, including Bootstrap's CDN file. The full-page result is:
+`assets/style.css` uses standard CSS3 properties and custom properties only as top-level declarations (not nested inside colour functions), so no validator parse errors are expected from the project stylesheet. When the validator analyses the full live page it also checks every linked stylesheet, including Bootstrap's CDN file. The full-page result is:
 
 | Stylesheet | Errors | Warnings | Origin |
 |---|---|---|---|
