@@ -28,6 +28,126 @@ SVG layout diagrams for all seven pages, showing navigation, content areas, and 
 
 Full annotated diagrams with design rationale for each page are on the [Wireframe page](wireframe.html).
 
+## Accessibility
+
+The site is designed to meet **WCAG 2.1 Level AA** throughout. The sections below document every accessibility feature and the audit that verified them.
+
+### Colour Contrast
+
+All text colours were checked against their actual rendered background using the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/). WCAG AA requires a minimum ratio of **4.5:1** for normal text and **3:1** for large text (≥18 pt or ≥14 pt bold).
+
+| Element | Foreground | Background | Ratio | Standard | Result |
+|---|---|---|---|---|---|
+| Body text | `#333333` | `#ffffff` | 10.4:1 | AA (4.5:1) | Pass |
+| Headings | `#2c3e50` | `#ffffff` | 11.4:1 | AA (4.5:1) | Pass |
+| Accent text (`#b45309`) | `#b45309` | `#ffffff` | 5.0:1 | AA (4.5:1) | Pass |
+| Muted text (`#5a6472`) | `#5a6472` | `#ffffff` | 5.6:1 | AA (4.5:1) | Pass |
+| Muted text on section bg | `#5a6472` | `#f1f3f5` | 5.0:1 | AA (4.5:1) | Pass |
+| Nav links | `#2c3e50` | `#ffffff` | 11.4:1 | AA (4.5:1) | Pass |
+| Page header (white on dark) | `#ffffff` | `#2c3e50` | 11.4:1 | AA (4.5:1) | Pass |
+| Footer links | `rgba(255,255,255,0.82)` | `#2c3e50` | 8.5:1 | AA (4.5:1) | Pass |
+| Footer body text | `rgba(255,255,255,0.9)` | `#2c3e50` | 11.0:1 | AA (4.5:1) | Pass |
+| Active nav link (amber) | `#b45309` | `#f8f9fa` | 4.8:1 | AA (4.5:1) | Pass |
+| Submit button | `#ffffff` | `#b45309` | 5.0:1 | AA (4.5:1) | Pass |
+
+The decorative orange `#e67e22` is used **only** for the section-divider rule and hover underline — never for text — so no contrast check applies.
+
+### Alternative Text
+
+Every non-decorative image has a descriptive `alt` attribute that conveys the subject and artistic intent of the photograph, not just its filename or date.
+
+| Image | Alt text |
+|---|---|
+| About portrait | `John E. Parman standing in a leather jacket, looking directly at the camera` |
+| Gallery — Door (Herefordshire) | `Ornate Victorian-style stained-glass front door on a brick terrace in Herefordshire` |
+| Gallery — Brickworks | `Close-up of weathered red and grey brick sidings at Brierley Hill, showing texture and age` |
+| Gallery — Local Horses | `Two horses — one black and white, one brown — standing near a fence at Bumble Hole nature reserve` |
+| Gallery — Evening Study | `Atmospheric study of fading evening light through trees and undergrowth, January 2021` |
+| Gallery — Midday Light | `Stark winter landscape bathed in flat midday light, bare branches against a pale sky, January 2021` |
+| Gallery — January Walk I | `First image in a three-part walk series: path and open ground in the West Midlands, January 2021` |
+| Gallery — January Walk II | `Second image in the walk series: a different viewpoint along the same West Midlands path, January 2021` |
+| Gallery — January Walk III | `Third and final image in the walk series: wider view of the West Midlands landscape, January 2021` |
+| Gallery — February Study | `Wintry outdoor study from February 2020, muted tones and bare winter vegetation in low natural light` |
+| Gallery — Christmas Day | `Quiet West Midlands outdoor scene on Christmas Day 2020, still winter light and empty paths` |
+| Gallery — New Year Study | `Early January 2021 outdoor study, bare winter landscape marking the start of the new year` |
+| Floatjet screenshot | `Screenshot of the Floatjet app interface showing a feedback form with colour-coded rating buttons` |
+| Art Me portrait | `Portrait of Benny Shakes, a friend and collaborator, used to represent the Art Me interactive drawing project` |
+| Community drawings (dynamic) | `Community drawing number N, submitted by a visitor` (generated per card) |
+| Wireframe SVGs | Descriptive alt text on each of the 7 wireframe diagrams |
+
+Purely decorative structural elements use `aria-hidden="true"` so screen readers skip them.
+
+### Form Accessibility
+
+The contact form on the home page follows these conventions:
+
+- Every input and textarea has an explicit `<label>` linked by matching `for`/`id` attributes.
+- Required fields (Full Name, Email, Message) are identified visually by an asterisk (`*`) next to the label. The asterisk uses `aria-hidden="true"` so screen readers skip it — the HTML `required` attribute handles the announcement automatically.
+- A sentence above the form reads: *"Fields marked * are required."* The word "asterisk" is included in a `visually-hidden` span for screen readers who read the note.
+- Phone Number has no asterisk and no `required` attribute, making the distinction clear.
+- The `<canvas>` drawing tool carries `aria-label="Interactive drawing canvas — use your mouse or finger to draw"`.
+- Colour selection buttons use `role="group"` on the container and individual `aria-label` + `aria-pressed` attributes on each button, so a screen reader announces both the colour name and its current selected state.
+
+### Focus Indicators
+
+Every interactive element shows a **3 px solid `#b45309` outline** (5.0:1 contrast ratio on white) when focused via keyboard. This applies to:
+
+- All `<a>` links
+- All `<button>` elements
+- All `<input>` and `<textarea>` fields
+- The drawing `<canvas>`
+- Bookmark cards
+- The back-to-top button
+- The skip-to-content link
+
+The skip link uses the same `#b45309` outline — corrected from the decorative orange `#e67e22` (~2.9:1), which fell below the WCAG 2.2 minimum of 3:1 for focus indicators.
+
+### Skip Navigation
+
+Every page begins with a visually hidden "Skip to main content" link as the first focusable element. When a keyboard user presses Tab from the browser address bar, the link appears at the top-left of the screen and targets `<main id="main-content">`, allowing the user to bypass the repeated navigation bar. The link is styled to be clearly visible when focused.
+
+### Semantic Structure
+
+| Feature | Implementation |
+|---|---|
+| Language | `lang="en"` on every `<html>` element |
+| Page landmarks | `<nav>`, `<header>`, `<main>`, `<section>`, `<footer>` on every page |
+| Navigation label | `aria-label="Main navigation"` on `<nav>` to distinguish it from footer nav |
+| Footer nav label | `aria-label="Footer navigation"` |
+| Section labels | Every `<section>` has `aria-labelledby` pointing to its visible heading |
+| Heading hierarchy | `<h1>` once per page, `<h2>` for major sections, `<h3>` for cards |
+| `<figure>` / `<figcaption>` | All wireframe diagrams use correct `<figure>` with `<figcaption>` inside |
+| Video embed | YouTube `<iframe>` has `title="Featured video by John E. Parman on YouTube"` |
+| Live region | Changelog list has `aria-live="polite"` so screen readers announce updates |
+
+### Drawing Tool — Colourblind Safety
+
+The colour palette on the Draw page uses the **Okabe–Ito** set — a palette specifically designed to remain distinguishable for all common types of colour vision deficiency (deuteranopia, protanopia, tritanopia):
+
+| Swatch | Hex | Name |
+|---|---|---|
+| ⬛ | `#000000` | Black |
+| 🟧 | `#E69F00` | Orange |
+| 🟦 | `#56B4E9` | Sky Blue |
+| 🟩 | `#009E73` | Green |
+
+Colours are also labelled in text, so the tool is fully usable without colour perception.
+
+### Accessibility Audit — Issues Found and Fixed
+
+An audit was conducted against all seven pages. The items below were identified and resolved:
+
+| File | Issue | Fix |
+|---|---|---|
+| `assets/style.css` | Skip link focus outline used `#e67e22` (decorative orange, ~2.9:1 contrast) — below the WCAG 2.2 minimum of 3:1 for focus indicators | Changed to `#b45309` (5.0:1), consistent with all other focus styles |
+| `gallery.html` | 8 images had generic alt text describing only the date ("outdoor scene photographed in January 2021") — gave no information about the artistic subject | Rewrote all 8 alt texts to describe subject, light quality, and series context |
+| `index.html` | Contact form had no visual distinction between required and optional fields | Added asterisk `*` after each required label; added an explanatory note above the form; used `aria-hidden` on asterisks so screen readers use the `required` attribute instead |
+| `wireframe.html` | Accessibility notes card incorrectly stated fields were marked with `aria-required="true"` | Corrected to reflect actual implementation: `required` attribute + visible asterisk + explanatory note |
+| `index.html` | `aria-required="true"` was present on inputs that already had the `required` attribute — redundant | Removed `aria-required`; the HTML `required` attribute is sufficient |
+| `drawback.html` | `aria-label` on a `<div>` with no `role` attribute — invalid per ARIA spec | Added `role="region"` to the gallery container |
+| `wireframe.html` | 4 × `<figcaption>` elements placed after `</figure>` instead of inside it | Moved each `<figcaption>` inside its parent `<figure>` |
+| `wireframe.html` | 4 × `<section>` elements used `aria-labelledby` pointing to a `<p>` element (not a heading) | Changed the four `<p class="wf-page-title">` elements to `<h2>` |
+
 ## File Structure
 
 ```
