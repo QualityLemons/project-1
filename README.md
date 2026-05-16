@@ -1,6 +1,101 @@
 # John E. Parman — Portfolio Mini-Site
 
-A static HTML/CSS/JavaScript personal portfolio and creative practice site for John E. Parman: writer, community organiser, graphic designer, performance artist, researcher, and trainee web software engineer.
+A static personal portfolio and creative practice site for John E. Parman: writer, community organiser, graphic designer, performance artist, researcher, and trainee web software engineer.
+
+**Live site:** https://qualitylemons.github.io/project-1/
+
+---
+
+## Purpose
+
+This site is the central public-facing home for John E. Parman's creative practice. It exists to do three things:
+
+1. **Introduce the practitioner** — explain who John is, what disciplines he works across, and what kind of collaborations he is looking for.
+2. **Present the work** — give visitors a direct, browseable view of his photographic and creative output, as well as live projects such as Floatjet and Art Me.
+3. **Invite contact and participation** — provide a way for visitors to get in touch via the contact form, and a way to leave a mark on the site itself by drawing a message and adding it to the community gallery.
+
+The site is built as a static HTML/CSS/JavaScript application with no server-side components, making it fast, low-maintenance, and free to host on GitHub Pages.
+
+---
+
+## Value to Users
+
+Different visitors come to the site for different reasons. The table below describes the three main user groups and what the site offers each of them.
+
+| User | What they come for | What the site provides |
+|---|---|---|
+| **Potential collaborators and employers** | Evidence of creative and technical skills, a sense of John's personality and working style, a way to make contact | Portfolio section with three live projects; About section with background and current goals; contact form in the footer |
+| **Community members and creative peers** | A way to engage with John's practice directly, not just observe it | The Draw a Message tool — visitors can make a drawing and submit it to the community gallery, which anyone can browse |
+| **College assessors and technical reviewers** | Evidence of web development competence, accessibility practice, UX reasoning, and testing rigour | Automated test results (221/221 pass), W3C validation records, accessibility audit, UX design rationale, wireframes, and the user story |
+
+### Page-by-page summary
+
+| Page | Primary purpose | Who it is for |
+|---|---|---|
+| Home (`index.html`) | Identity, context, and navigation hub | All visitors — first contact point |
+| Gallery (`gallery.html`) | Browse the photographic portfolio | Creative peers, employers |
+| Draw a Message (`contact.html`) | Interactive drawing tool | Community members, anyone curious |
+| Community Gallery (`drawback.html`) | See drawings submitted by visitors | Community members |
+| Bookmarks (`bookmarks.html`) | Curated links across five categories | John's own reference use; anyone interested in the same tools |
+| A User Story (`story.html`) | Narrative accessibility case study | Assessors, UX and accessibility reviewers |
+| Wireframe Design (`wireframe.html`) | Annotated layout diagrams for all pages | Assessors, technical reviewers |
+
+---
+
+## Deployment
+
+### Live deployment — GitHub Pages
+
+The site is hosted on **GitHub Pages**, served directly from the `main` branch of the repository. No build step is required — GitHub Pages serves the HTML, CSS, and JavaScript files as-is.
+
+**Current live URL:** `https://qualitylemons.github.io/project-1/`
+
+#### How to deploy your own copy
+
+1. **Fork or clone** the repository to your own GitHub account.
+
+2. **Push your changes** to the `main` branch. All site files must be in the root of the repository (not in a subdirectory).
+
+3. **Enable GitHub Pages** on your repository:
+   - Go to your repository on GitHub
+   - Click **Settings** → **Pages** (in the left sidebar under *Code and automation*)
+   - Under *Source*, select **Deploy from a branch**
+   - Set the branch to **main** and the folder to **/ (root)**
+   - Click **Save**
+
+4. **Wait for the build** — GitHub will run a short deployment workflow (usually under two minutes). A green tick will appear on the Actions tab when it finishes.
+
+5. **Visit your site** — the URL will be `https://<your-username>.github.io/<your-repo-name>/`.
+
+#### Updating the live site
+
+Every `git push` to the `main` branch triggers a new deployment automatically. Changes are live within approximately one minute of the push completing.
+
+#### Custom domain (optional)
+
+To serve the site from your own domain, create a file named `CNAME` in the repository root containing your domain name (e.g. `www.example.com`), then configure a `CNAME` DNS record pointing to `<your-username>.github.io` with your domain registrar.
+
+---
+
+### Local development
+
+No build tools, bundlers, or package managers are required. Serve the repository root with Python's built-in HTTP server:
+
+```bash
+python3 -m http.server 5000
+```
+
+Then open `http://localhost:5000` in a browser.
+
+> The site must be served over HTTP (not opened as a file path) because the development log on the home page fetches data from the GitHub API, which requires an HTTP origin.
+
+To run the automated test suite:
+
+```bash
+python3 tests/run_tests.py
+```
+
+---
 
 ## Pages
 
@@ -13,6 +108,24 @@ A static HTML/CSS/JavaScript personal portfolio and creative practice site for J
 | `bookmarks.html` | Curated external link collection — Design & Colour Tools, Development & Learning, Business & Research, Work & Community, Browser Resources |
 | `story.html` | User story — Dr. Asha Mehta and the accessibility improvements |
 | `wireframe.html` | CSS wireframe diagrams for all pages |
+
+---
+
+## Page Wireframes
+
+SVG layout diagrams for all seven pages, showing navigation, content areas, and footer structure without applied styling or imagery.
+
+| Home | Gallery | Draw a Message | Community Gallery |
+|:---:|:---:|:---:|:---:|
+| ![Home wireframe](assets/images/wireframes/home.svg) | ![Gallery wireframe](assets/images/wireframes/gallery.svg) | ![Draw wireframe](assets/images/wireframes/draw.svg) | ![Community wireframe](assets/images/wireframes/community.svg) |
+
+| Bookmarks | A User Story | Wireframe |
+|:---:|:---:|:---:|
+| ![Bookmarks wireframe](assets/images/wireframes/bookmarks.svg) | ![Story wireframe](assets/images/wireframes/story.svg) | ![Wireframe page wireframe](assets/images/wireframes/wireframe.svg) |
+
+Full annotated diagrams with design rationale for each page are on the [Wireframe page](wireframe.html).
+
+---
 
 ## UX Design
 
@@ -63,23 +176,11 @@ The former category names **"Quick Access"** (renamed to **"Work & Community"**)
 
 Every section with more than one item includes a brief introductory line explaining what the visitor will find. This reduces scanning effort — a user can read one sentence and decide whether to engage with the section rather than having to inspect individual cards or links to understand the category.
 
-## Page Wireframes
-
-SVG layout diagrams for all seven pages, showing navigation, content areas, and footer structure without applied styling or imagery.
-
-| Home | Gallery | Draw a Message | Community Gallery |
-|:---:|:---:|:---:|:---:|
-| ![Home wireframe](assets/images/wireframes/home.svg) | ![Gallery wireframe](assets/images/wireframes/gallery.svg) | ![Draw wireframe](assets/images/wireframes/draw.svg) | ![Community wireframe](assets/images/wireframes/community.svg) |
-
-| Bookmarks | A User Story | Wireframe |
-|:---:|:---:|:---:|
-| ![Bookmarks wireframe](assets/images/wireframes/bookmarks.svg) | ![Story wireframe](assets/images/wireframes/story.svg) | ![Wireframe page wireframe](assets/images/wireframes/wireframe.svg) |
-
-Full annotated diagrams with design rationale for each page are on the [Wireframe page](wireframe.html).
+---
 
 ## Accessibility
 
-The site is designed to meet **WCAG 2.1 Level AA** throughout. The sections below document every accessibility feature and the audit that verified them.
+The site targets **WCAG 2.1 Level AA** throughout. The sections below document every accessibility feature and the audit that verified them.
 
 ### Colour Contrast
 
@@ -132,28 +233,20 @@ The contact form on the home page follows these conventions:
 
 - Every input and textarea has an explicit `<label>` linked by matching `for`/`id` attributes.
 - Required fields (Full Name, Email, Message) are identified visually by an asterisk (`*`) next to the label. The asterisk uses `aria-hidden="true"` so screen readers skip it — the HTML `required` attribute handles the announcement automatically.
-- A sentence above the form reads: *"Fields marked * are required."* The word "asterisk" is included in a `visually-hidden` span for screen readers who read the note.
+- A sentence above the form reads: *"Fields marked * are required."*
 - Phone Number has no asterisk and no `required` attribute, making the distinction clear.
 - The `<canvas>` drawing tool carries `aria-label="Interactive drawing canvas — use your mouse or finger to draw"`.
 - Colour selection buttons use `role="group"` on the container and individual `aria-label` + `aria-pressed` attributes on each button, so a screen reader announces both the colour name and its current selected state.
 
 ### Focus Indicators
 
-Every interactive element shows a **3 px solid `#b45309` outline** (5.0:1 contrast ratio on white) when focused via keyboard. This applies to:
-
-- All `<a>` links
-- All `<button>` elements
-- All `<input>` and `<textarea>` fields
-- The drawing `<canvas>`
-- Bookmark cards
-- The back-to-top button
-- The skip-to-content link
+Every interactive element shows a **3 px solid `#b45309` outline** (5.0:1 contrast ratio on white) when focused via keyboard. This applies to all links, buttons, inputs, textareas, the drawing canvas, bookmark cards, the back-to-top button, and the skip-to-content link.
 
 The skip link uses the same `#b45309` outline — corrected from the decorative orange `#e67e22` (~2.9:1), which fell below the WCAG 2.2 minimum of 3:1 for focus indicators.
 
 ### Skip Navigation
 
-Every page begins with a visually hidden "Skip to main content" link as the first focusable element. When a keyboard user presses Tab from the browser address bar, the link appears at the top-left of the screen and targets `<main id="main-content">`, allowing the user to bypass the repeated navigation bar. The link is styled to be clearly visible when focused.
+Every page begins with a visually hidden "Skip to main content" link as the first focusable element. When a keyboard user presses Tab from the browser address bar, the link appears at the top-left of the screen and targets `<main id="main-content">`, allowing the user to bypass the repeated navigation bar.
 
 ### Semantic Structure
 
@@ -161,17 +254,17 @@ Every page begins with a visually hidden "Skip to main content" link as the firs
 |---|---|
 | Language | `lang="en"` on every `<html>` element |
 | Page landmarks | `<nav>`, `<header>`, `<main>`, `<section>`, `<footer>` on every page |
-| Navigation label | `aria-label="Main navigation"` on `<nav>` to distinguish it from footer nav |
+| Navigation label | `aria-label="Main navigation"` on `<nav>` |
 | Footer nav label | `aria-label="Footer navigation"` |
 | Section labels | Every `<section>` has `aria-labelledby` pointing to its visible heading |
 | Heading hierarchy | `<h1>` once per page, `<h2>` for major sections, `<h3>` for cards |
 | `<figure>` / `<figcaption>` | All wireframe diagrams use correct `<figure>` with `<figcaption>` inside |
 | Video embed | YouTube `<iframe>` has `title="Featured video by John E. Parman on YouTube"` |
-| Live region | Changelog list has `aria-live="polite"` so screen readers announce updates |
+| Live region | Changelog list has `aria-live="polite"` |
 
 ### Drawing Tool — Colourblind Safety
 
-The colour palette on the Draw page uses the **Okabe–Ito** set — a palette specifically designed to remain distinguishable for all common types of colour vision deficiency (deuteranopia, protanopia, tritanopia):
+The colour palette on the Draw page uses the **Okabe–Ito** set — designed to remain distinguishable for all common types of colour vision deficiency:
 
 | Swatch | Hex | Name |
 |---|---|---|
@@ -184,18 +277,18 @@ Colours are also labelled in text, so the tool is fully usable without colour pe
 
 ### Accessibility Audit — Issues Found and Fixed
 
-An audit was conducted against all seven pages. The items below were identified and resolved:
-
 | File | Issue | Fix |
 |---|---|---|
-| `assets/style.css` | Skip link focus outline used `#e67e22` (decorative orange, ~2.9:1 contrast) — below the WCAG 2.2 minimum of 3:1 for focus indicators | Changed to `#b45309` (5.0:1), consistent with all other focus styles |
-| `gallery.html` | 8 images had generic alt text describing only the date ("outdoor scene photographed in January 2021") — gave no information about the artistic subject | Rewrote all 8 alt texts to describe subject, light quality, and series context |
-| `index.html` | Contact form had no visual distinction between required and optional fields | Added asterisk `*` after each required label; added an explanatory note above the form; used `aria-hidden` on asterisks so screen readers use the `required` attribute instead |
-| `wireframe.html` | Accessibility notes card incorrectly stated fields were marked with `aria-required="true"` | Corrected to reflect actual implementation: `required` attribute + visible asterisk + explanatory note |
-| `index.html` | `aria-required="true"` was present on inputs that already had the `required` attribute — redundant | Removed `aria-required`; the HTML `required` attribute is sufficient |
-| `drawback.html` | `aria-label` on a `<div>` with no `role` attribute — invalid per ARIA spec | Added `role="region"` to the gallery container |
-| `wireframe.html` | 4 × `<figcaption>` elements placed after `</figure>` instead of inside it | Moved each `<figcaption>` inside its parent `<figure>` |
-| `wireframe.html` | 4 × `<section>` elements used `aria-labelledby` pointing to a `<p>` element (not a heading) | Changed the four `<p class="wf-page-title">` elements to `<h2>` |
+| `assets/style.css` | Skip link focus outline used `#e67e22` (~2.9:1) — below WCAG 2.2 minimum of 3:1 | Changed to `#b45309` (5.0:1) |
+| `gallery.html` | 8 images had generic alt text describing only the date | Rewrote all 8 alt texts to describe subject, light quality, and series context |
+| `index.html` | Contact form had no visual distinction between required and optional fields | Added asterisk `*` after each required label; added explanatory note; used `aria-hidden` on asterisks |
+| `wireframe.html` | Accessibility notes card incorrectly stated fields were marked with `aria-required="true"` | Corrected to reflect actual implementation |
+| `index.html` | `aria-required="true"` present on inputs that already had the `required` attribute | Removed `aria-required`; the HTML `required` attribute is sufficient |
+| `drawback.html` | `aria-label` on a `<div>` with no `role` | Added `role="region"` to the gallery container |
+| `wireframe.html` | 4 × `<figcaption>` placed after `</figure>` instead of inside it | Moved each `<figcaption>` inside its parent `<figure>` |
+| `wireframe.html` | 4 × `<section>` used `aria-labelledby` pointing to a `<p>` element | Changed the four `<p class="wf-page-title">` elements to `<h2>` |
+
+---
 
 ## File Structure
 
@@ -220,6 +313,8 @@ An audit was conducted against all seven pages. The items below were identified 
 └── README.md
 ```
 
+---
+
 ## Technologies
 
 - **HTML5** — semantic markup throughout
@@ -227,6 +322,8 @@ An audit was conducted against all seven pages. The items below were identified 
 - **JavaScript (ES5/ES6)** — vanilla JS, no build step required
 - **Bootstrap 5.3.3** — responsive grid and component framework
 - **Python 3** (`http.server`) — local development server
+
+---
 
 ## External Libraries & Attributions
 
@@ -304,20 +401,6 @@ SRI integrity hashes are included on each `<link>` and `<script>` tag to verify 
 |---|---|
 | Source | https://getbootstrap.com/docs/5.3/components/collapse/#via-javascript |
 | License | MIT — https://github.com/twbs/bootstrap/blob/main/LICENSE |
-
----
-
-## Accessibility
-
-This site targets **WCAG 2.1 Level AA** throughout:
-
-- All text colours meet the 4.5:1 minimum contrast ratio on their backgrounds
-- Skip-to-content links on every page for keyboard and screen-reader users
-- Descriptive `alt` attributes on all meaningful images
-- ARIA labels on navigation, interactive controls, and the drawing canvas
-- Form fields marked with `required` and associated `<label>` elements
-- Drawing colour palette designed to be distinguishable under common colour-vision deficiencies
-- Responsive layouts tested across mobile, tablet, and desktop breakpoints
 
 ---
 
@@ -558,22 +641,6 @@ Tested at three standard breakpoints using browser DevTools device emulation and
 - **Drawing canvas on very narrow screens (<320 px):** At extreme narrow widths the colour-picker toolbar wraps to two rows, which is functional but not visually ideal.
 
 ---
-
-## Development
-
-No build tools, bundlers, or package managers are required. Open any HTML file in a browser, or serve the root directory:
-
-```bash
-python3 -m http.server 5000
-```
-
-Then visit `http://localhost:5000`.
-
-To run the automated tests:
-
-```bash
-python3 tests/run_tests.py
-```
 
 ## Licence
 
