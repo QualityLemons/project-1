@@ -37,8 +37,64 @@ Different visitors come to the site for different reasons. The table below descr
 | Draw a Message (`contact.html`) | Interactive drawing tool | Community members, anyone curious |
 | Community Gallery (`drawback.html`) | See drawings submitted by visitors | Community members |
 | Bookmarks (`bookmarks.html`) | Curated links across five categories | John's own reference use; anyone interested in the same tools |
-| A User Story (`story.html`) | Narrative accessibility case study | Assessors, UX and accessibility reviewers |
+| User Stories (`story.html`) | Two narrative accessibility case studies | Assessors, UX and accessibility reviewers |
 | Wireframe Design (`wireframe.html`) | Annotated layout diagrams for all pages | Assessors, technical reviewers |
+
+---
+
+## User Stories
+
+Two narrative case studies written in the style of UX user stories. Each one follows a real-type persona encountering the site, identifies the barriers they faced, and explains what the experience reveals about accessible design. Both are presented in full on the [User Stories page](story.html).
+
+---
+
+### Story 1 — Dr. Asha Mehta: The Frustrated Lecturer
+
+**Persona:** Dr. Asha Mehta, 52, Senior Lecturer in Digital Media & Communications. Has mild colour-vision deficiency (deuteranomaly). Reviews the site on a projector and an ageing tablet.
+
+**What she encountered:** Amber accent text that disappeared on the projector; gallery images with no descriptive alt text; no skip navigation; the contact link missing from two pages; the mobile menu staying open after a tap.
+
+**What changed:** All six issues were identified, named, and fixed — contrast corrected, alt text written, skip links added, navigation made consistent, hamburger breakpoint moved, mobile menu closed on tap.
+
+**What the story demonstrates:** Accessibility failures are specific and fixable. Feedback from a real user is more useful than any checklist.
+
+---
+
+### Story 2 — Margaret Thornton: Gallery, Drawing, and the Right to Respond
+
+**Persona:** Margaret Thornton, 74, retired community arts worker from Dudley, West Midlands. Had a stroke three years ago. Communicates using a combination of British Sign Language (BSL) signs, a speech-generating device (AAC app on her iPad), and limited functional speech. Uses her iPad left-handed.
+
+**What she encountered:** The gallery loaded and VoiceOver read each image's descriptive alt text aloud — the sentence-level descriptions gave her language she did not have to produce herself. She recognised the places photographed: Bumble Hole, Brierley Hill. She wanted to respond. The contact form — four text fields, a blank message box — was not a channel she could use. Aphasia makes word-finding effortful; typing a message is not a realistic option without support.
+
+**How she found a way through:** Her grandson pointed her to the Draw page. The colour buttons were large enough to tap accurately with one finger. She selected Sky Blue and drew a slow arc across the canvas — a gesture that in BSL would mean *this mattered*. She submitted it. It appeared in the Community Gallery. She had left a mark on the site in the only way the site currently makes possible for her, and it had worked precisely because the tool does not require words.
+
+**What the story demonstrates:**
+
+- Feedback must match the user's expressive modality, not only the site's preferred input. A text-only contact form excludes anyone who communicates primarily through sign, symbol, drawing, or speech generation.
+- The Draw a Message tool is an unintentional but genuine AAC-compatible feedback channel. It accepts any mark, requires only one-handed touch, has no typing requirement, and places the result in a public gallery.
+- Descriptive alt text is not only for screen-reader users. For someone with word-finding difficulties, being given language removes the barrier of having to produce it — the difference between a page that is open and one that is locked.
+- Touch-first design and AAC design overlap significantly. Large targets, clear labels, one-handed operation, no time limits: these are the same affordances.
+- The next step is explicit design, not accidental accommodation — a BSL video response, audio feedback, or symbol-based reactions on gallery images would make Margaret's path intentional rather than improvised.
+
+#### Screenshots — the pages Margaret used
+
+**The Gallery — where Margaret heard her places described**
+
+![Gallery page showing three photographs with descriptive titles: Door (Herefordshire), Brickworks (Brierley Hill), Local Horses (Bumble Hole)](assets/images/screenshots/story2-gallery.jpg)
+
+The gallery loads images with descriptive alt text that VoiceOver announces on touch. Each photograph has a sentence-level description conveying subject, location, and quality of light — giving Margaret language she does not have to produce herself.
+
+**Draw a Message — the unexpected feedback channel**
+
+![Draw a Message page showing four large colour buttons (Black, Orange, Sky Blue, Green) and a clear drawing canvas below](assets/images/screenshots/story2-draw.jpg)
+
+Four large, clearly labelled colour buttons. A blank canvas activated by touch or mouse. No typing required. One-handed operation on a touch screen. Margaret selected Sky Blue and drew her response — a slow arc that, in her expressive vocabulary, meant something.
+
+**Community Gallery — where her mark appeared**
+
+![Community Gallery page showing the heading and a prompt to be the first to draw](assets/images/screenshots/story2-community.jpg)
+
+After submitting, Margaret's drawing appeared in the Community Gallery alongside drawings from other visitors. Her mark — visual, non-verbal, communicated — sits in the same space as every other contribution, without hierarchy or distinction.
 
 ---
 
