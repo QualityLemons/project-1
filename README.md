@@ -181,14 +181,6 @@ SVG layout diagrams for all seven pages, showing navigation, content areas, and 
 
 Full annotated diagrams with design rationale for each page are on the [Wireframe page](wireframe.html).
 
-### Bookmarks Page Wireframe
-
-![Bookmarks page wireframe showing nav bar, hero panel, and two link-card grid sections: Design and Colour Tools and Development and Learning](assets/images/screenshots/wireframe-bookmarks.jpg)
-
-### Story Page Wireframe
-
-![Story page wireframe showing nav bar, A User Story hero panel, Dr. Asha Mehta persona card, and four narrative act sections: The Discovery, The Problems, John Gets to Work, and The Result](assets/images/screenshots/wireframe-story.jpg)
-
 ---
 
 ## UX Design
