@@ -58,7 +58,7 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-8 text-center">
                     <h1 class="display-3 fw-bold mb-3">john e. parman</h1>
-                    <h2 class="display-6 mb-4">creative communication practice</h2>
+                    <p class="display-6 mb-4">creative communication practice</p>
                     <p class="lead mb-5">
                         Hi, you've reached john e. parman. I am a writer, community organiser, graphic designer,
                         performance artist, researcher, impresario, and trainee web software engineer.
@@ -116,39 +116,14 @@
             </div>
         </section>
 
-        <section id="featured-video" class="section-pad bg-section" aria-labelledby="video-heading">
-            <div class="container">
-                <div class="col-12 text-center mb-5">
-                    <h2 class="section-title" id="video-heading">Featured Video</h2>
-                    <div class="section-divider" aria-hidden="true"></div>
-                    <p class="text-muted">
-                        Press play to watch — use the video controls to pause, skip, or adjust volume.
-                    </p>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-12 col-lg-9">
-                        <!-- YouTube iframe Embed API — user-initiated playback, no autoplay
-                             Source: https://developers.google.com/youtube/iframe_api_reference
-                             Video: https://www.youtube.com/watch?v=ylqYjbd8CMo -->
-                        <div class="video-wrapper">
-                            <iframe
-                                src="https://www.youtube.com/embed/ylqYjbd8CMo?rel=0&modestbranding=1"
-                                title="Featured video by John E. Parman on YouTube — user-controlled playback"
-                                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen
-                                loading="lazy"
-                                referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="portfolio" class="section-pad" aria-labelledby="portfolio-heading">
+        <section id="portfolio" class="section-pad bg-section" aria-labelledby="portfolio-heading">
             <div class="container">
                 <div class="col-12 text-center mb-5">
                     <h2 class="section-title" id="portfolio-heading">Portfolio</h2>
                     <div class="section-divider" aria-hidden="true"></div>
+                    <p class="text-muted">
+                        Three ongoing projects — browse the photography collection, explore the Floatjet feedback tool, or leave a drawing in the community gallery.
+                    </p>
                 </div>
                 <div class="row g-4">
                     <div class="col-12 col-md-4">
@@ -190,16 +165,44 @@
             </div>
         </section>
 
+        <section id="featured-video" class="section-pad" aria-labelledby="video-heading">
+            <div class="container">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title" id="video-heading">Featured Video</h2>
+                    <div class="section-divider" aria-hidden="true"></div>
+                    <p class="text-muted">
+                        Press play to watch — use the video controls to pause, skip, or adjust volume.
+                    </p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-9">
+                        <!-- YouTube iframe Embed API — user-initiated playback, no autoplay
+                             Source: https://developers.google.com/youtube/iframe_api_reference
+                             Video: https://www.youtube.com/watch?v=ylqYjbd8CMo -->
+                        <div class="video-wrapper">
+                            <iframe
+                                src="https://www.youtube.com/embed/ylqYjbd8CMo?rel=0&modestbranding=1"
+                                title="Featured video by John E. Parman on YouTube — user-controlled playback"
+                                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="recent-updates" class="section-pad bg-section" aria-labelledby="updates-heading">
             <div class="container">
                 <div class="col-12 text-center mb-5">
-                    <h2 class="section-title" id="updates-heading">Recent Updates</h2>
+                    <h2 class="section-title" id="updates-heading">Development Log</h2>
                     <div class="section-divider" aria-hidden="true"></div>
-                    <p class="text-muted">The latest commits pushed to this project's GitHub repository.</p>
+                    <p class="text-muted">A live record of changes to this site — each entry is a save point from the GitHub repository showing what was added or improved.</p>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-12 col-lg-8">
-                        <ul class="changelog-list" id="changelogList" aria-live="polite" aria-label="Recent GitHub commits">
+                        <ul class="changelog-list" id="changelogList" aria-live="polite" aria-label="Development log — recent GitHub commits">
                             <li id="changelogStatus" class="changelog-loading">Loading recent updates&hellip;</li>
                         </ul>
                     </div>
