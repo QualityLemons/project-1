@@ -48,7 +48,7 @@ body {
 
 .skip-link:focus {
     top: 0;
-    outline: 3px solid var(--accent-color);
+    outline: 3px solid var(--accent-text);  /* #b45309 — 5.0:1 on white, consistent with all other focus styles */
     outline-offset: 2px;
 }
 
@@ -559,7 +559,83 @@ body {
 }
 
 /* =============================================
-   15. Accessibility — Focus Styles
+   15. Recent Updates / Changelog Widget
+   ============================================= */
+.changelog-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.changelog-loading {
+    color: var(--text-muted);
+    font-style: italic;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.changelog-item {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr 4rem;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid #dee2e6;
+    transition: background-color var(--transition);
+}
+
+.changelog-item:first-child {
+    border-top: 1px solid #dee2e6;
+}
+
+.changelog-item:hover {
+    background-color: rgba(44, 62, 80, 0.04);
+}
+
+.changelog-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.changelog-msg {
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    text-decoration: none;
+    word-break: break-word;
+    transition: color var(--transition);
+}
+
+.changelog-msg:hover,
+.changelog-msg:focus-visible {
+    color: var(--accent-text);
+    text-decoration: underline;
+}
+
+.changelog-sha {
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-align: right;
+    white-space: nowrap;
+}
+
+@media (max-width: 575.98px) {
+    .changelog-item {
+        grid-template-columns: 1fr;
+        gap: 0.3rem;
+        padding: 0.75rem 0.5rem;
+    }
+
+    .changelog-sha {
+        text-align: left;
+    }
+}
+
+/* =============================================
+   16. Accessibility — Focus Styles
    ============================================= */
 #drawingCanvas:focus {
     outline: 3px solid var(--accent-text);
