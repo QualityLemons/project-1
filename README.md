@@ -14,6 +14,20 @@ A static HTML/CSS/JavaScript personal portfolio and creative practice site for J
 | `story.html` | User story — Dr. Asha Mehta and the accessibility improvements |
 | `wireframe.html` | CSS wireframe diagrams for all pages |
 
+## Page Wireframes
+
+SVG layout diagrams for all seven pages, showing navigation, content areas, and footer structure without applied styling or imagery.
+
+| Home | Gallery | Draw a Message | Community Gallery |
+|:---:|:---:|:---:|:---:|
+| ![Home wireframe](assets/images/wireframes/home.svg) | ![Gallery wireframe](assets/images/wireframes/gallery.svg) | ![Draw wireframe](assets/images/wireframes/draw.svg) | ![Community wireframe](assets/images/wireframes/community.svg) |
+
+| Bookmarks | A User Story | Wireframe |
+|:---:|:---:|:---:|
+| ![Bookmarks wireframe](assets/images/wireframes/bookmarks.svg) | ![Story wireframe](assets/images/wireframes/story.svg) | ![Wireframe page wireframe](assets/images/wireframes/wireframe.svg) |
+
+Full annotated diagrams with design rationale for each page are on the [Wireframe page](wireframe.html).
+
 ## File Structure
 
 ```
@@ -26,11 +40,14 @@ A static HTML/CSS/JavaScript personal portfolio and creative practice site for J
 ├── story.html
 ├── wireframe.html
 ├── assets/
-│   ├── style.css       — all custom CSS
-│   ├── nav.js          — shared navigation enhancements
-│   └── images/         — local image assets
+│   ├── style.css          — all custom CSS
+│   ├── nav.js             — shared navigation enhancements
+│   ├── changelog.js       — GitHub API commit feed
+│   └── images/
+│       ├── wireframes/    — SVG wireframe diagrams (7 pages)
+│       └── ...            — site photography and artwork
 ├── tests/
-│   └── run_tests.py    — automated HTML audit script
+│   └── run_tests.py       — automated HTML audit script (221 checks)
 └── README.md
 ```
 
