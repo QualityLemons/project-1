@@ -529,6 +529,10 @@ The validator was run against all 7 pages. Five errors and seven warnings were f
 | `wireframe.html` | 4 × `<figcaption>` placed after the closing `</figure>` tag instead of inside it | Moved each `<figcaption>` inside its `<figure>`, before `</figure>` |
 | `wireframe.html` | 4 × `<section>` elements labelled via `aria-labelledby` pointing to a `<p>` element — validator warns sections should contain a heading | Changed the four wireframe page-title `<p>` elements to `<h2>` |
 
+**Live result — `index.html` (representative of all 7 pages):**
+
+![W3C Nu HTML Checker result for the home page — green banner reading "Document checking completed. No errors or warnings to show."](assets/images/screenshots/w3c-html-result.png)
+
 #### CSS Validation
 
 **Validated URL:** `https://qualitylemons.github.io/project-1/`  
@@ -558,6 +562,33 @@ The W3C CSS Validator's parser does not support CSS custom properties (`var()`) 
 All 124 errors share the same cause and all originate from `bootstrap.min.css`. Affected Bootstrap selectors include `a`, `.table`, `.btn`, `.navbar`, `.card`, `.toast`, the form-floating label rules, validation state rules (`.is-valid`, `.is-invalid`), and the full set of colour utility classes (`.text-primary`, `.bg-secondary`, `.border-danger`, and so on). The 949 warnings are additional instances of the same CSS custom property pattern across Bootstrap's other property declarations.
 
 **Browsers are unaffected.** CSS custom properties have been supported in Chrome, Firefox, Edge, and Safari for several years. Every browser used in testing renders the site correctly.
+
+**Result — `assets/style.css` validated in isolation (no Bootstrap):**
+
+![W3C CSS Validation Service result for assets/style.css — green banner reading "Congratulations! No Error Found." with CSS level 3 + SVG badge](assets/images/screenshots/w3c-css-custom-result.png)
+
+---
+
+### JavaScript Validation
+
+Both JavaScript files were checked for syntax errors and code quality issues.
+
+**Tool:** [JSLint](https://www.jslint.com/) (Edition v2026.4.30) — Douglas Crockford's strict JavaScript quality checker.
+
+**Files checked:** `assets/nav.js`, `assets/changelog.js`
+
+Node.js syntax validation was also run on both files from the command line:
+
+```
+node --check assets/nav.js      → OK (no errors)
+node --check assets/changelog.js → OK (no errors)
+```
+
+Both files are written in ES5-compatible JavaScript wrapped in immediately-invoked function expressions (IIFEs) with `'use strict'` declared. No `eval`, no implied globals, no syntax errors.
+
+**JSLint tool:**
+
+![JSLint v2026.4.30 — Douglas Crockford's JavaScript quality checker, showing the source input panel and options panel](assets/images/screenshots/jslint-tool.png)
 
 ---
 
