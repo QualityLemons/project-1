@@ -6,13 +6,62 @@ A static HTML/CSS/JavaScript personal portfolio and creative practice site for J
 
 | File | Description |
 |---|---|
-| `index.html` | Home page — hero, about, portfolio, featured video, contact form |
+| `index.html` | Home page — hero, about, portfolio, featured video, development log, contact form |
 | `gallery.html` | Photo and artwork gallery |
 | `contact.html` | Interactive drawing canvas tool |
 | `drawback.html` | Community gallery — drawings saved by visitors |
-| `bookmarks.html` | Curated external link collection in five categories |
+| `bookmarks.html` | Curated external link collection — Design & Colour Tools, Development & Learning, Business & Research, Work & Community, Browser Resources |
 | `story.html` | User story — Dr. Asha Mehta and the accessibility improvements |
 | `wireframe.html` | CSS wireframe diagrams for all pages |
+
+## UX Design
+
+The site's information architecture follows three principles: the **inverted pyramid** (most important content first), **clear heading hierarchy** (headings convey structure, not style), and **scannable labels** (every heading and category name describes its contents plainly).
+
+### Home Page — Section Order
+
+Sections are sequenced so that a first-time visitor encounters the most decision-relevant content before supplementary content:
+
+| Order | Section | Reason |
+|---|---|---|
+| 1 | Hero | Immediate identity — who is this person and what is the site for |
+| 2 | About My Practice | Context — background, skills, and what the visitor can expect |
+| 3 | Portfolio | Core output — the three projects, directly scannable as cards |
+| 4 | Featured Video | Supplementary depth — for visitors who want more after seeing the portfolio |
+| 5 | Development Log | Transparency — a live record of site changes, lowest priority for most visitors |
+| 6 | Contact (footer) | Action — reached after enough context to decide whether to get in touch |
+
+The **Portfolio section** was intentionally placed before **Featured Video** because portfolio cards are fast to scan (image, title, one sentence, button) and directly answer "what has this person made?" A video requires a longer time commitment and works better as supporting content once interest is established.
+
+### Heading Hierarchy
+
+Every page uses a strict `H1 → H2 → H3` hierarchy. Headings are used to mark sections of content, never to apply visual style.
+
+| Level | Usage | Examples |
+|---|---|---|
+| `H1` | Page title — one per page | "john e. parman", "Gallery", "Bookmarks" |
+| `H2` | Major sections within a page | "About My Practice", "Portfolio", "Development Log", "Design & Colour Tools" |
+| `H3` | Sub-items within a section | Portfolio card titles ("Gallery", "Floatjet", "Art Me"), photo titles in the gallery |
+
+The hero tagline **"creative communication practice"** is marked up as a `<p>` element, not an `<h2>`. It is descriptive text accompanying the `<h1>`, not a content section. Using `<h2>` for it would insert a false structural node above all the real section headings.
+
+### Bookmark Categories
+
+Categories are ordered from most broadly useful to most specific:
+
+| Category | Contents | Reason for order |
+|---|---|---|
+| Design & Colour Tools | Adobe Color, Coolors, WebAIM contrast checker, etc. | Primary creative discipline — most visited |
+| Development & Learning | MDN, freeCodeCamp, Can I Use, etc. | Current training focus |
+| Business & Research | Companies House, Gov.uk guidance, etc. | Reference — used when needed |
+| Work & Community | Indeed, BEC Leaps, Wavemaker Cards, Microsoft 365 | Personal tools and community affiliations |
+| Browser Resources | Firefox default bookmarks | Lowest priority — browser defaults retained for reference |
+
+The former category names **"Quick Access"** (renamed to **"Work & Community"**) and **"Mozilla Firefox"** (renamed to **"Browser Resources"**) were vague or brand-specific. The new names describe the contents, not the source or access method.
+
+### Section Descriptions
+
+Every section with more than one item includes a brief introductory line explaining what the visitor will find. This reduces scanning effort — a user can read one sentence and decide whether to engage with the section rather than having to inspect individual cards or links to understand the category.
 
 ## Page Wireframes
 
