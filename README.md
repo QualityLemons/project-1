@@ -183,11 +183,11 @@ Full annotated diagrams with design rationale for each page are on the [Wirefram
 
 ### Bookmarks Page Wireframe
 
-![Bookmarks page wireframe — showing nav bar, "Bookmarks" hero, and two link-card grid sections: Design & Colour Tools (6 cards: Coolors, Adobe Color, Contrast Checker, Google Fonts, Unsplash, Font Awesome) and Development & Learning (4 cards: MDN Web Docs, W3Schools, GitHub Education, Git Cheat Sheet)](assets/images/screenshots/wireframe-bookmarks.jpg)
+![Bookmarks page wireframe showing nav bar, hero panel, and two link-card grid sections: Design and Colour Tools and Development and Learning](assets/images/screenshots/wireframe-bookmarks.jpg)
 
 ### Story Page Wireframe
 
-![Story page wireframe — showing nav bar, "A User Story" hero with subtitle "Accessibility & UX narrative" and persona line "Dr. Asha Mehta · Senior Lecturer", then four narrative act sections: The Persona (persona card with avatar, attributes, and goal), Act One – The Discovery, Act Two – The Problems, Act Three – John Gets to Work, Act Four – The Result](assets/images/screenshots/wireframe-story.jpg)
+![Story page wireframe showing nav bar, A User Story hero panel, Dr. Asha Mehta persona card, and four narrative act sections: The Discovery, The Problems, John Gets to Work, and The Result](assets/images/screenshots/wireframe-story.jpg)
 
 ---
 
